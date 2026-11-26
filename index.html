@@ -1,0 +1,3247 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Body Action Academia | Uma Nova Academia, a Mesma Essência</title>
+    <meta name="description" content="Body Action Academia — 11 anos de história. Musculação, Jump, Ritbox, Funcional, Ritmos e Avaliação Física Completa. Agende sua aula experimental gratuita.">
+    <meta name="theme-color" content="#0B0710">
+
+    <!-- Schema.org LocalBusiness / ExerciseGym (RNF04) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ExerciseGym",
+      "name": "Body Action Academia",
+      "description": "11 anos de história unindo estrutura renovada, musculação e aulas coletivas de alta energia: Jump, Ritbox, Funcional e Ritmos.",
+      "priceRange": "$$",
+      "openingHours": [
+        "Mo-Fr 06:00-22:00",
+        "Sa 08:00-13:00"
+      ]
+    }
+    </script>
+
+    <!-- Google Fonts: Montserrat (Display Cinematográfico) & Inter (Corpo) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:ital,wght@0,700;0,800;0,900;1,800;1,900&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Tailwind Custom Theme Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        obsidian: '#0B0710',
+                        night: '#170C24',
+                        royal: '#4A0E6E',
+                        electric: '#8E24AA',
+                        magenta: '#D81B60',
+                        energy: '#FFD600',
+                        gold: '#F5B800',
+                        lavender: '#C4B9D1',
+                    },
+                    fontFamily: {
+                        display: ['Montserrat', 'sans-serif'],
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'glow-purple': '0 0 40px -10px rgba(142, 36, 170, 0.55)',
+                        'glow-yellow': '0 0 30px -5px rgba(255, 214, 0, 0.45)',
+                        'glow-magenta': '0 0 40px -10px rgba(216, 27, 96, 0.45)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* =========================================================
+           ESTILOS CINEMATOGRÁFICOS & MOTION DESIGN
+        ========================================================= */
+        :root {
+            color-scheme: dark;
+        }
+
+        body {
+            background-color: #12081F;
+            background-image:
+                radial-gradient(circle at 15% 20%, rgba(74, 14, 110, 0.45) 0%, transparent 45%),
+                radial-gradient(circle at 85% 50%, rgba(142, 36, 170, 0.28) 0%, transparent 50%),
+                radial-gradient(circle at 25% 85%, rgba(216, 27, 96, 0.22) 0%, transparent 45%),
+                linear-gradient(180deg, #0E0718 0%, #170B28 35%, #140A24 70%, #0E0718 100%);
+            background-attachment: fixed;
+            color: #FFFFFF;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* Glassmorphism Sofisticado */
+        .glass-card {
+            background: rgba(28, 14, 46, 0.62);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: border-color 0.35s ease, transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease;
+        }
+
+        .glass-card:hover {
+            border-color: rgba(142, 36, 170, 0.55);
+            box-shadow: 0 20px 40px -15px rgba(74, 14, 110, 0.45);
+        }
+
+        /* Header Scroll State */
+        .header-scrolled {
+            background: rgba(11, 7, 16, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Efeito Sheen (Brilho Cinematográfico) em Botões Primários */
+        .btn-energy {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .btn-energy::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 60%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.45), transparent);
+            transform: skewX(-25deg);
+            transition: left 0.65s ease;
+        }
+
+        .btn-energy:hover::after {
+            left: 140%;
+        }
+
+        /* Borda Gradiente Iluminada para Plano Destaque */
+        .plan-featured {
+            position: relative;
+            background: linear-gradient(180deg, rgba(23, 12, 36, 0.95) 0%, rgba(11, 7, 16, 0.98) 100%);
+        }
+
+        .plan-featured::before {
+            content: '';
+            position: absolute;
+            inset: -1.5px;
+            border-radius: 1.5rem;
+            padding: 1.5px;
+            background: linear-gradient(135deg, #FFD600 0%, #8E24AA 50%, #D81B60 100%);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            pointer-events: none;
+        }
+
+        /* Scroll Reveal Animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Delays escalonados */
+        .delay-100 { transition-delay: 100ms; }
+        .delay-200 { transition-delay: 200ms; }
+        .delay-300 { transition-delay: 300ms; }
+
+        /* Gradiente de texto */
+        .text-gradient-purple {
+            background: linear-gradient(135deg, #FFFFFF 0%, #C4B9D1 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Scrollbar personalizada */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0B0710;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #4A0E6E;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #8E24AA;
+        }
+
+        /* Respeito a prefers-reduced-motion (Seção 6 do PRD) */
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+            .reveal {
+                opacity: 1;
+                transform: none;
+            }
+        }
+    </style>
+
+    <!-- =========================================================
+         STUDIO FACTORY — ESTILOS ISOLADOS (REMOVIDOS NO SITE FINAL)
+    ========================================================= -->
+    <style data-studio-factory="true">
+        /* Botão flutuante discreto no canto inferior esquerdo */
+        #sf-launcher {
+            position: fixed;
+            bottom: 24px;
+            left: 24px;
+            z-index: 9990;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 18px;
+            border-radius: 16px;
+            background: linear-gradient(135deg, #170C24 0%, #4A0E6E 100%);
+            border: 1px solid rgba(255, 214, 0, 0.55);
+            color: #FFFFFF;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 12px;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.55), 0 0 24px rgba(142, 36, 170, 0.45);
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        #sf-launcher:hover {
+            transform: translateY(-2px) scale(1.03);
+            box-shadow: 0 14px 36px rgba(0, 0, 0, 0.65), 0 0 30px rgba(255, 214, 0, 0.35);
+        }
+        #sf-launcher .sf-dot {
+            width: 9px;
+            height: 9px;
+            border-radius: 999px;
+            background: #FFD600;
+            box-shadow: 0 0 10px #FFD600;
+        }
+
+        /* Ajustes temporários quando o Studio está ativo */
+        body.sf-active-mode {
+            padding-top: 56px !important;
+        }
+        body.sf-active-mode #main-header {
+            top: 56px !important;
+        }
+        body.sf-active-mode.sf-drag-cursor * {
+            cursor: grab !important;
+        }
+
+        /* Destaque de Hover e Seleção no Canvas */
+        .sf-hover {
+            outline: 1.5px dashed rgba(255, 214, 0, 0.85) !important;
+            outline-offset: 2px !important;
+        }
+        .sf-selected {
+            outline: 2.5px solid #FFD600 !important;
+            outline-offset: 3px !important;
+            box-shadow: 0 0 0 4px rgba(142, 36, 170, 0.35) !important;
+        }
+        .sf-editing-text {
+            outline: 2.5px solid #00E5FF !important;
+            cursor: text !important;
+        }
+
+        /* Barra Superior do Studio */
+        #sf-toolbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 56px;
+            z-index: 9995;
+            background: rgba(11, 7, 16, 0.96);
+            backdrop-filter: blur(18px);
+            border-bottom: 1px solid rgba(255, 214, 0, 0.25);
+            display: none;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 14px;
+            gap: 10px;
+            font-family: 'Inter', sans-serif;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
+        }
+        #sf-toolbar.sf-open {
+            display: flex;
+        }
+
+        .sf-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 7px 11px;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            color: #FFFFFF;
+            font-size: 11px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            white-space: nowrap;
+        }
+        .sf-btn:hover {
+            background: rgba(142, 36, 170, 0.35);
+            border-color: rgba(255, 214, 0, 0.5);
+        }
+        .sf-btn.sf-btn-active {
+            background: #FFD600;
+            color: #0B0710;
+            border-color: #FFD600;
+            font-weight: 800;
+        }
+        .sf-btn.sf-btn-primary {
+            background: #FFD600;
+            color: #0B0710;
+            border-color: #FFD600;
+            font-weight: 800;
+        }
+        .sf-btn.sf-btn-primary:hover {
+            background: #F5B800;
+        }
+        .sf-btn.sf-btn-purple {
+            background: linear-gradient(135deg, #4A0E6E, #8E24AA);
+            border-color: rgba(255, 255, 255, 0.2);
+            color: #FFFFFF;
+            font-weight: 700;
+        }
+        .sf-btn.sf-btn-danger {
+            background: rgba(216, 27, 96, 0.2);
+            border-color: rgba(216, 27, 96, 0.5);
+            color: #FF80AB;
+        }
+        .sf-btn.sf-btn-danger:hover {
+            background: #D81B60;
+            color: #FFFFFF;
+        }
+
+        /* Painel Inspetor Lateral Direito */
+        #sf-inspector {
+            position: fixed;
+            top: 66px;
+            right: 12px;
+            bottom: 12px;
+            width: 330px;
+            max-width: calc(100vw - 24px);
+            z-index: 9994;
+            background: rgba(16, 9, 26, 0.96);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            border-radius: 18px;
+            display: none;
+            flex-direction: column;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.75);
+            font-family: 'Inter', sans-serif;
+            color: #FFFFFF;
+        }
+        #sf-inspector.sf-open {
+            display: flex;
+        }
+        .sf-inspector-body {
+            flex: 1;
+            overflow-y: auto;
+            padding: 14px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+        .sf-field-label {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: #C4B9D1;
+            margin-bottom: 5px;
+        }
+        .sf-input, .sf-select, .sf-textarea {
+            width: 100%;
+            background: rgba(11, 7, 16, 0.9);
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            border-radius: 10px;
+            padding: 8px 10px;
+            color: #FFFFFF;
+            font-size: 12px;
+            outline: none;
+            transition: border-color 0.2s ease;
+        }
+        .sf-input:focus, .sf-select:focus, .sf-textarea:focus {
+            border-color: #FFD600;
+        }
+        .sf-range {
+            width: 100%;
+            accent-color: #FFD600;
+            cursor: pointer;
+        }
+        .sf-tab-btn {
+            flex: 1;
+            padding: 8px 4px;
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            color: #C4B9D1;
+            border-bottom: 2px solid transparent;
+            cursor: pointer;
+            transition: all 0.2s;
+            background: transparent;
+        }
+        .sf-tab-btn.sf-tab-active {
+            color: #FFD600;
+            border-bottom-color: #FFD600;
+            background: rgba(255, 214, 0, 0.06);
+        }
+        .sf-swatch {
+            width: 24px;
+            height: 24px;
+            border-radius: 7px;
+            border: 1.5px solid rgba(255, 255, 255, 0.25);
+            cursor: pointer;
+            transition: transform 0.15s;
+        }
+        .sf-swatch:hover {
+            transform: scale(1.15);
+            border-color: #FFD600;
+        }
+
+        /* Barra Flutuante Rápida no Elemento Selecionado */
+        #sf-quick-bar {
+            position: fixed;
+            z-index: 9993;
+            display: none;
+            align-items: center;
+            gap: 4px;
+            padding: 4px 6px;
+            border-radius: 10px;
+            background: #170C24;
+            border: 1px solid #FFD600;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7);
+            font-family: 'Inter', sans-serif;
+        }
+        #sf-quick-bar button {
+            padding: 4px 7px;
+            border-radius: 6px;
+            background: rgba(255, 255, 255, 0.08);
+            color: #FFFFFF;
+            font-size: 11px;
+            font-weight: 700;
+            cursor: pointer;
+            border: none;
+        }
+        #sf-quick-bar button:hover {
+            background: #FFD600;
+            color: #0B0710;
+        }
+        #sf-quick-drag {
+            cursor: grab !important;
+            background: rgba(255, 214, 0, 0.2) !important;
+            color: #FFD600 !important;
+        }
+
+        /* Toast de feedback do Studio */
+        #sf-toast {
+            position: fixed;
+            bottom: 24px;
+            left: 50%;
+            transform: translateX(-50%) translateY(20px);
+            z-index: 9999;
+            background: #170C24;
+            border: 1px solid #FFD600;
+            color: #FFFFFF;
+            padding: 10px 18px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.7);
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.25s ease;
+        }
+        #sf-toast.sf-show {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+        }
+
+        /* Modal de Exportação / Configurações Globais */
+        #sf-modal {
+            position: fixed;
+            inset: 0;
+            z-index: 9998;
+            background: rgba(11, 7, 16, 0.85);
+            backdrop-filter: blur(12px);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 16px;
+        }
+        #sf-modal.sf-open {
+            display: flex;
+        }
+    </style>
+</head>
+<body class="text-white antialiased selection:bg-energy selection:text-obsidian relative">
+
+    <!-- Camada Global de Iluminação Cinematográfica (mesmo efeito do Hero em todo o site) -->
+    <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden" aria-hidden="true">
+        <div class="absolute top-[18%] -left-32 w-[520px] h-[520px] bg-electric/30 rounded-full blur-[150px]"></div>
+        <div class="absolute top-[48%] -right-32 w-[520px] h-[520px] bg-magenta/22 rounded-full blur-[160px]"></div>
+        <div class="absolute bottom-[8%] left-1/4 w-[600px] h-[420px] bg-royal/40 rounded-full blur-[160px]"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-[#0E0718]/40 via-royal/20 to-[#0E0718]/40"></div>
+    </div>
+
+    <!-- =========================================================
+         HEADER FLUTUANTE
+    ========================================================= -->
+    <header id="main-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-4 px-4 sm:px-6 lg:px-10">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <!-- Logotipo -->
+            <a href="#inicio" class="flex items-center gap-2.5 group focus:outline-none">
+                <div class="w-9 h-9 rounded-xl bg-energy text-obsidian flex items-center justify-center shadow-glow-yellow group-hover:scale-105 transition-transform">
+                    <span class="font-display font-black italic text-base tracking-tighter">BA</span>
+                </div>
+                <div class="flex flex-col leading-none">
+                    <span class="font-display font-black text-base sm:text-lg tracking-tight text-white">
+                        BODY<span class="text-energy italic">ACTION</span>
+                    </span>
+                    <span class="text-[9px] tracking-[0.26em] text-lavender uppercase font-semibold mt-0.5">Academia</span>
+                </div>
+            </a>
+
+            <!-- Navegação Desktop -->
+            <nav class="hidden lg:flex items-center gap-7" aria-label="Navegação Principal">
+                <a href="#modalidades" class="text-sm font-medium text-lavender hover:text-white transition-colors">Modalidades</a>
+                <a href="#manifesto" class="text-sm font-medium text-lavender hover:text-white transition-colors">Estrutura</a>
+                <a href="#planos" class="text-sm font-medium text-lavender hover:text-white transition-colors">Planos</a>
+                <a href="#horarios" class="text-sm font-medium text-lavender hover:text-white transition-colors">Horários</a>
+                <a href="#contato" class="text-sm font-medium text-lavender hover:text-white transition-colors">Onde fica</a>
+            </nav>
+
+            <!-- CTA Desktop estilo Pill com ícone circular & Botão Menu Mobile -->
+            <div class="flex items-center gap-3">
+                <button onclick="openBookingModal('Aula Experimental Gratuita')" class="hidden sm:inline-flex items-center gap-2.5 bg-energy hover:bg-gold text-obsidian font-display font-extrabold text-xs tracking-wide pl-5 pr-2 py-2 rounded-full btn-energy shadow-glow-yellow cursor-pointer">
+                    <span>Agendar aula grátis</span>
+                    <span class="w-7 h-7 rounded-full bg-obsidian text-energy flex items-center justify-center">
+                        <i data-lucide="message-circle" class="w-3.5 h-3.5"></i>
+                    </span>
+                </button>
+
+                <!-- Botão Hamburger Mobile -->
+                <button id="mobile-menu-btn" aria-label="Abrir menu" class="lg:hidden p-3 rounded-xl bg-night/80 border border-white/10 text-white hover:border-energy/60 transition-colors cursor-pointer">
+                    <i data-lucide="menu" class="w-5 h-5"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Gaveta Mobile (Full-Screen Drawer) -->
+    <div id="mobile-drawer" class="fixed inset-0 z-[60] bg-obsidian/98 backdrop-blur-2xl hidden flex-col justify-between p-6 sm:p-10 transition-opacity duration-300 opacity-0">
+        <!-- Glow de fundo no drawer -->
+        <div class="absolute top-0 right-0 w-72 h-72 bg-electric/30 rounded-full blur-[120px] pointer-events-none"></div>
+
+        <div class="flex items-center justify-between relative z-10">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-royal via-electric to-magenta flex items-center justify-center">
+                    <span class="font-display font-black italic text-energy text-lg">BA</span>
+                </div>
+                <span class="font-display font-black text-xl tracking-tight">BODY<span class="text-energy italic">ACTION</span></span>
+            </div>
+            <button id="close-drawer-btn" aria-label="Fechar menu" class="p-3 rounded-xl bg-night border border-white/10 text-white hover:text-energy transition-colors cursor-pointer">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+        </div>
+
+        <nav class="flex flex-col gap-5 relative z-10 my-auto">
+            <a href="#manifesto" class="mobile-link font-display font-extrabold text-3xl uppercase tracking-tight text-white hover:text-energy transition-colors">A Academia</a>
+            <a href="#modalidades" class="mobile-link font-display font-extrabold text-3xl uppercase tracking-tight text-white hover:text-energy transition-colors">Modalidades</a>
+            <a href="#comunidade" class="mobile-link font-display font-extrabold text-3xl uppercase tracking-tight text-white hover:text-energy transition-colors">Comunidade</a>
+            <a href="#planos" class="mobile-link font-display font-extrabold text-3xl uppercase tracking-tight text-white hover:text-energy transition-colors">Planos</a>
+            <a href="#horarios" class="mobile-link font-display font-extrabold text-3xl uppercase tracking-tight text-white hover:text-energy transition-colors">Horários</a>
+            <a href="#contato" class="mobile-link font-display font-extrabold text-3xl uppercase tracking-tight text-white hover:text-energy transition-colors">Contato</a>
+        </nav>
+
+        <div class="relative z-10 flex flex-col gap-4">
+            <button onclick="closeMobileDrawer(); openBookingModal('Aula Experimental');" class="w-full py-4 rounded-xl bg-energy hover:bg-gold text-obsidian font-display font-black uppercase tracking-wider text-sm flex items-center justify-center gap-2 shadow-glow-yellow cursor-pointer">
+                <span>Agendar Aula Gratuita</span>
+                <i data-lucide="zap" class="w-4 h-4 fill-obsidian"></i>
+            </button>
+            <p class="text-center text-xs text-lavender">11 Anos de História • Uma Nova Academia, a Mesma Essência</p>
+        </div>
+    </div>
+
+    <main class="relative z-10">
+        <!-- =========================================================
+             3.2 HERO SECTION — LAYOUT EDITORIAL ASSIMÉTRICO + CARDS FLUTUANTES
+        ========================================================= -->
+        <section id="inicio" class="relative min-h-[88vh] flex flex-col justify-start overflow-hidden pt-16 sm:pt-20 pb-6 px-4 sm:px-6 lg:px-10">
+            <!-- Imagem de Fundo Cinematográfica à Direita com Fusão Suave para a Esquerda -->
+            <div id="hero-bg" class="absolute inset-0 z-0 transition-transform duration-700">
+                <img
+                    id="hero-slide-img"
+                    src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=2000&q=80"
+                    onerror="this.onerror=null; this.src='https://placehold.co/1920x1080/170C24/FFD600?text=Body+Action+Academia';"
+                    alt="Ambiente cinematográfico de treino na Body Action Academia"
+                    class="w-full h-full object-cover object-center lg:object-right opacity-90 transition-opacity duration-500"
+                >
+                <!-- Fusão escura roxa suave da esquerda (texto) para a direita (fundo bem visível) -->
+                <div class="absolute inset-0 bg-gradient-to-r from-[#0B0710]/90 via-[#12081F]/55 lg:via-[#12081F]/35 to-transparent"></div>
+                <div class="absolute inset-0 bg-gradient-to-t from-[#0E0718]/90 via-transparent to-[#0B0710]/40"></div>
+            </div>
+
+            <!-- Iluminação Volumétrica Roxa & Magenta -->
+            <div class="absolute top-1/4 -left-24 w-96 h-96 bg-electric/25 rounded-full blur-[140px] pointer-events-none z-0"></div>
+            <div class="absolute bottom-1/4 right-10 w-80 h-80 bg-magenta/20 rounded-full blur-[130px] pointer-events-none z-0"></div>
+
+            <!-- Grid Principal do Hero (Esquerda: Copy | Direita: Cards Flutuantes sobre a Foto) -->
+            <div class="relative z-10 max-w-7xl mx-auto w-full pt-2 pb-5 lg:pt-3 lg:pb-6 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-6 items-center">
+
+                <!-- COLUNA ESQUERDA: Conteúdo Editorial Alinhado à Esquerda -->
+                <div class="lg:col-span-7 flex flex-col items-start text-left">
+                    <!-- Badge Pill -->
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-energy/10 border border-energy/35 mb-4 reveal">
+                        <span class="w-1.5 h-1.5 rounded-full bg-energy animate-pulse"></span>
+                        <span class="text-[11px] font-display font-bold uppercase tracking-[0.18em] text-energy">
+                            Academia no Centro • 11 Anos
+                        </span>
+                    </div>
+
+                    <!-- Headline Impactante em 2 Linhas -->
+                    <h1 class="font-display font-black uppercase text-4xl sm:text-5xl xl:text-[4.25rem] tracking-tight leading-[0.96] mb-4 reveal delay-100">
+                        <span class="block text-white">ELEVE SUA FORÇA.</span>
+                        <span class="block text-energy mt-1">VIVA A ENERGIA.</span>
+                    </h1>
+
+                    <!-- Subtítulo Direto -->
+                    <p class="max-w-lg text-base sm:text-lg text-lavender leading-relaxed mb-5 reveal delay-200">
+                        Musculação, Jump, Ritbox, Funcional e Ritmos com acompanhamento próximo. Nunca treinou? <span class="text-white font-medium">Sua primeira aula é por nossa conta.</span>
+                    </p>
+
+                    <!-- CTAs Estilo Pill -->
+                    <div class="flex flex-wrap items-center gap-3.5 w-full sm:w-auto mb-3.5 reveal delay-300">
+                        <button onclick="openBookingModal('Aula Experimental Gratuita')" class="inline-flex items-center justify-between gap-3 pl-6 pr-2.5 py-2.5 rounded-full bg-energy hover:bg-gold text-obsidian font-display font-extrabold text-sm tracking-wide btn-energy shadow-glow-yellow cursor-pointer">
+                            <span>Agendar aula grátis</span>
+                            <span class="w-8 h-8 rounded-full bg-obsidian text-energy flex items-center justify-center">
+                                <i data-lucide="message-circle" class="w-4 h-4"></i>
+                            </span>
+                        </button>
+
+                        <a href="#planos" class="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-full bg-night/75 hover:bg-royal/60 border border-white/15 hover:border-energy/50 text-white font-display font-bold text-sm backdrop-blur-md transition-all">
+                            <span>Ver planos</span>
+                            <i data-lucide="arrow-up-right" class="w-4 h-4 text-energy"></i>
+                        </a>
+                    </div>
+
+                    <!-- Nota de Apoio Discreta -->
+                    <p class="text-xs text-lavender/75 max-w-md leading-relaxed mb-5 reveal delay-300">
+                        1 aula experimental por pessoa, com professor, cerca de 1h. Traga documento com foto e roupa de treino.
+                    </p>
+
+                    <!-- Indicadores de Slide Interativos (Estilo Referência) -->
+                    <div class="flex items-center gap-3 reveal delay-300">
+                        <div class="flex items-center gap-2" id="hero-slide-dots">
+                            <button type="button" onclick="setHeroSlide(0)" aria-label="Slide 1" class="hero-dot w-8 h-1 rounded-full bg-energy transition-all cursor-pointer"></button>
+                            <button type="button" onclick="setHeroSlide(1)" aria-label="Slide 2" class="hero-dot w-5 h-1 rounded-full bg-white/25 hover:bg-white/50 transition-all cursor-pointer"></button>
+                            <button type="button" onclick="setHeroSlide(2)" aria-label="Slide 3" class="hero-dot w-5 h-1 rounded-full bg-white/25 hover:bg-white/50 transition-all cursor-pointer"></button>
+                        </div>
+                        <button type="button" id="hero-slide-toggle" onclick="toggleHeroAutoplay()" aria-label="Pausar ou continuar slides" class="w-7 h-7 rounded-full bg-white/10 hover:bg-white/20 border border-white/15 flex items-center justify-center text-lavender hover:text-energy transition-colors cursor-pointer">
+                            <i data-lucide="pause" class="w-3 h-3"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- COLUNA DIREITA: 2 Cards Flutuantes em Glassmorphism sobre a Foto -->
+                <div class="lg:col-span-5 relative flex flex-col sm:flex-row lg:flex-col items-stretch sm:items-center lg:items-end justify-between gap-4 lg:gap-14 lg:min-h-[320px] reveal delay-200">
+
+                    <!-- Card Flutuante 1: Status da Academia em Tempo Real -->
+                    <div class="glass-card rounded-2xl p-4 sm:p-5 w-full sm:w-64 border-white/15 bg-night/70 shadow-2xl">
+                        <div class="flex items-center justify-between gap-2 mb-3">
+                            <div class="flex items-center gap-2 text-xs font-medium text-lavender">
+                                <i data-lucide="clock" class="w-3.5 h-3.5 text-energy"></i>
+                                <span id="hero-status-label">Aberto agora</span>
+                            </div>
+                            <span id="hero-status-dot" class="w-2 h-2 rounded-full bg-energy shadow-glow-yellow"></span>
+                        </div>
+                        <div id="hero-status-sub" class="text-[10px] font-display font-bold uppercase tracking-[0.16em] text-lavender/80">SEG A SEX • HOJE</div>
+                        <div id="hero-status-hour" class="font-display font-black text-3xl text-white mt-0.5 mb-4">06h–22h</div>
+
+                        <!-- Barra de Progresso do Dia -->
+                        <div class="w-full h-1.5 rounded-full bg-white/10 overflow-hidden mb-1.5">
+                            <div id="hero-status-bar" class="h-full rounded-full bg-gradient-to-r from-electric to-energy" style="width: 48%;"></div>
+                        </div>
+                        <div class="flex items-center justify-between text-[10px] text-lavender/80 font-medium">
+                            <span>06h</span>
+                            <span>22h</span>
+                        </div>
+                    </div>
+
+                    <!-- Card Flutuante 2: Próxima Aula Coletiva -->
+                    <div class="glass-card rounded-2xl p-4 sm:p-5 w-full sm:w-64 lg:self-start lg:ml-6 border-white/15 bg-night/75 shadow-2xl">
+                        <div class="flex items-center gap-2 text-xs font-medium text-lavender mb-3">
+                            <i data-lucide="calendar" class="w-3.5 h-3.5 text-energy"></i>
+                            <span>Próxima aula</span>
+                        </div>
+                        <div id="hero-next-day" class="text-[10px] font-display font-bold uppercase tracking-[0.16em] text-energy">HOJE</div>
+                        <div id="hero-next-time" class="font-display font-black text-3xl text-white mt-0.5">18h15</div>
+                        <div id="hero-next-class" class="text-xs text-lavender mt-1 font-medium">Jump • Alta Energia</div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- =========================================================
+                 3.3 BARRA INFERIOR INTEGRADA DE 4 COLUNAS (ESTILO REFERÊNCIA)
+            ========================================================= -->
+            <div id="metricas" class="relative z-10 max-w-7xl mx-auto w-full mt-4 reveal">
+                <div class="glass-card rounded-3xl bg-night/80 border-white/12 overflow-hidden shadow-glow-purple">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 divide-y sm:divide-y-0 sm:divide-x divide-white/10">
+
+                        <!-- Coluna 1: Localização -->
+                        <div class="p-5 sm:p-6 flex flex-col justify-between hover:bg-white/[0.02] transition-colors">
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="w-7 h-7 rounded-lg bg-energy/15 text-energy flex items-center justify-center">
+                                    <i data-lucide="map-pin" class="w-4 h-4"></i>
+                                </span>
+                                <a href="#contato" class="inline-flex items-center gap-1 text-[11px] font-medium text-lavender hover:text-energy transition-colors">
+                                    <span>Como chegar</span>
+                                    <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+                                </a>
+                            </div>
+                            <div>
+                                <div class="font-display font-black text-2xl sm:text-3xl text-white tracking-tight">Centro</div>
+                                <p class="text-xs text-lavender mt-1">estrutura renovada e fácil acesso</p>
+                            </div>
+                        </div>
+
+                        <!-- Coluna 2: A partir de -->
+                        <div class="p-5 sm:p-6 flex flex-col justify-between hover:bg-white/[0.02] transition-colors">
+                            <div class="flex items-center justify-between mb-3">
+                                <div class="flex items-center gap-2 text-[10px] font-display font-bold uppercase tracking-[0.15em] text-lavender">
+                                    <i data-lucide="tag" class="w-3.5 h-3.5 text-energy"></i>
+                                    <span>A partir de</span>
+                                </div>
+                                <a href="#planos" class="inline-flex items-center gap-1 text-[11px] font-medium text-lavender hover:text-energy transition-colors">
+                                    <span>Ver planos</span>
+                                    <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+                                </a>
+                            </div>
+                            <div>
+                                <div class="flex items-baseline gap-1">
+                                    <span class="text-xs text-lavender font-semibold">R$</span>
+                                    <span class="font-display font-black text-2xl sm:text-3xl text-white tracking-tight">99,00</span>
+                                    <span class="text-xs text-lavender">/mês</span>
+                                </div>
+                                <p class="text-xs text-lavender mt-1">plano anual • avaliação inclusa</p>
+                            </div>
+                        </div>
+
+                        <!-- Coluna 3: Tradição / Desde -->
+                        <div class="p-5 sm:p-6 flex flex-col justify-between hover:bg-white/[0.02] transition-colors">
+                            <div class="flex items-center gap-2 text-[10px] font-display font-bold uppercase tracking-[0.15em] text-lavender mb-3">
+                                <i data-lucide="calendar-check" class="w-3.5 h-3.5 text-energy"></i>
+                                <span>Desde</span>
+                            </div>
+                            <div>
+                                <div class="font-display font-black text-2xl sm:text-3xl text-white tracking-tight flex items-baseline gap-1.5">
+                                    <span class="counter" data-target="2015">2015</span>
+                                </div>
+                                <p class="text-xs text-lavender mt-1">11 anos de história e essência</p>
+                            </div>
+                        </div>
+
+                        <!-- Coluna 4: Modalidades -->
+                        <div class="p-5 sm:p-6 flex flex-col justify-between hover:bg-white/[0.02] transition-colors">
+                            <div class="flex items-center justify-between mb-3">
+                                <div class="flex items-center gap-2 text-[10px] font-display font-bold uppercase tracking-[0.15em] text-lavender">
+                                    <i data-lucide="zap" class="w-3.5 h-3.5 text-energy"></i>
+                                    <span>Modalidades</span>
+                                </div>
+                                <a href="#modalidades" class="inline-flex items-center gap-1 text-[11px] font-medium text-lavender hover:text-energy transition-colors">
+                                    <span>Explorar</span>
+                                    <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+                                </a>
+                            </div>
+                            <div>
+                                <div class="font-display font-black text-2xl sm:text-3xl text-white tracking-tight flex items-baseline gap-1">
+                                    <span>+</span><span class="counter" data-target="6">6</span>
+                                    <span class="text-sm font-semibold text-energy ml-1">aulas</span>
+                                </div>
+                                <p class="text-xs text-lavender mt-1">Musculação, Jump, Ritbox e mais</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================================================
+             3.4 MANIFESTO — "NÃO É APENAS SOBRE ESTÉTICA"
+        ========================================================= -->
+        <section id="manifesto" class="relative py-8 sm:py-10 px-4 sm:px-6 lg:px-10 overflow-hidden">
+            <!-- Ambient Glow -->
+            <div class="absolute top-1/2 -left-16 w-96 h-96 bg-electric/30 rounded-full blur-[140px] pointer-events-none"></div>
+            <div class="absolute bottom-0 right-0 w-80 h-80 bg-magenta/20 rounded-full blur-[140px] pointer-events-none"></div>
+
+            <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+                <!-- Coluna Esquerda: Texto Editorial -->
+                <div class="lg:col-span-6 reveal">
+                    <div class="inline-flex items-center gap-2 text-energy font-display font-bold text-xs uppercase tracking-[0.25em] mb-4">
+                        <span class="w-8 h-[2px] bg-energy"></span>
+                        <span>Nosso Propósito</span>
+                    </div>
+
+                    <h2 class="font-display font-black uppercase text-3xl sm:text-4xl lg:text-5xl leading-[1.08] mb-6">
+                        NÃO É APENAS SOBRE <span class="text-energy italic">ESTÉTICA.</span>
+                    </h2>
+
+                    <p class="text-lavender text-base sm:text-lg leading-relaxed mb-6">
+                        Seja aos 20, aos 40 ou aos 60 anos, treinar na <strong class="text-white">Body Action Academia</strong> é uma decisão de autocuidado real. É sobre construir <span class="text-white font-medium">força, músculos ativos, ossos fortes, autonomia</span> e qualidade de vida para aproveitar cada fase com disposição.
+                    </p>
+
+                    <p class="text-lavender text-base leading-relaxed mb-8">
+                        Renovamos nossa casa com equipamentos modernos e ambiente de alto padrão, mantendo intacto o que nos tornou referência há 11 anos: atendimento próximo, energia lá em cima e uma comunidade que vibra com cada conquista sua.
+                    </p>
+
+                    <!-- Pilares -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+                        <div class="glass-card rounded-2xl p-4 flex items-start gap-3.5">
+                            <div class="w-10 h-10 rounded-xl bg-royal/60 border border-electric/40 flex items-center justify-center shrink-0">
+                                <i data-lucide="shield-check" class="w-5 h-5 text-energy"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-display font-bold text-sm uppercase text-white">Treino para Todas as Fases</h3>
+                                <p class="text-xs text-lavender mt-1 leading-relaxed">Acompanhamento seguro para iniciantes, público 40+ e atletas.</p>
+                            </div>
+                        </div>
+
+                        <div class="glass-card rounded-2xl p-4 flex items-start gap-3.5">
+                            <div class="w-10 h-10 rounded-xl bg-magenta/20 border border-magenta/40 flex items-center justify-center shrink-0">
+                                <i data-lucide="flame" class="w-5 h-5 text-energy"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-display font-bold text-sm uppercase text-white">Energia Coletiva Real</h3>
+                                <p class="text-xs text-lavender mt-1 leading-relaxed">Aulas que transformam o cansaço pós-trabalho em endorfina.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button onclick="openBookingModal('Conhecer a Academia')" class="inline-flex items-center gap-2 text-energy hover:text-gold font-display font-bold text-sm uppercase tracking-wider group cursor-pointer">
+                        <span>Venha sentir essa energia pessoalmente</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1.5 transition-transform"></i>
+                    </button>
+                </div>
+
+                <!-- Coluna Direita: Composição Visual Cinematográfica -->
+                <div class="lg:col-span-6 relative reveal delay-200">
+                    <div class="relative rounded-3xl overflow-hidden border border-white/10 shadow-glow-purple group">
+                        <img
+                            src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=1200&q=80"
+                            onerror="this.onerror=null; this.src='https://placehold.co/900x1050/170C24/FFD600?text=Forca+e+Autonomia';"
+                            alt="Aluna treinando com foco e energia na Body Action"
+                            loading="lazy"
+                            class="w-full h-[440px] sm:h-[520px] object-cover group-hover:scale-105 transition-transform duration-700"
+                        >
+                        <!-- Gradiente roxo cinematográfico -->
+                        <div class="absolute inset-0 bg-gradient-to-t from-obsidian via-royal/25 to-transparent"></div>
+
+                        <!-- Card Flutuante Editorial -->
+                        <div class="absolute bottom-5 left-5 right-5 glass-card rounded-2xl p-5 border-energy/30">
+                            <div class="flex items-center justify-between gap-4">
+                                <div>
+                                    <span class="text-[10px] font-display font-bold uppercase tracking-[0.2em] text-energy">Manifesto Body Action</span>
+                                    <p class="font-display font-extrabold text-base sm:text-lg text-white mt-1">
+                                        "O shape dos outros não vai passar pra você pelo Instagram. Vem treinar!"
+                                    </p>
+                                </div>
+                                <div class="w-12 h-12 rounded-xl bg-energy text-obsidian flex items-center justify-center shrink-0">
+                                    <i data-lucide="dumbbell" class="w-6 h-6"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================================================
+             3.5 MODALIDADES & EXPERIÊNCIAS (BENTO GRID INTERATIVO)
+        ========================================================= -->
+        <section id="modalidades" class="relative py-8 px-4 sm:px-6 lg:px-10">
+            <div class="absolute top-10 right-0 w-96 h-96 bg-electric/25 rounded-full blur-[150px] pointer-events-none"></div>
+
+            <div class="max-w-7xl mx-auto">
+                <!-- Cabeçalho da Seção -->
+                <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-6 reveal">
+                    <div>
+                        <div class="inline-flex items-center gap-2 text-energy font-display font-bold text-xs uppercase tracking-[0.25em] mb-3">
+                            <span class="w-8 h-[2px] bg-energy"></span>
+                            <span>Modalidades & Experiências</span>
+                        </div>
+                        <h2 class="font-display font-black uppercase text-3xl sm:text-4xl lg:text-5xl leading-tight">
+                            ESCOLHA SEU <span class="text-energy italic">MOVIMENTO</span>
+                        </h2>
+                    </div>
+                    <p class="text-lavender max-w-md text-sm sm:text-base">
+                        Do treinamento de força às aulas coletivas mais vibrantes da cidade. Clique em qualquer modalidade para agendar sua aula experimental.
+                    </p>
+                </div>
+
+                <!-- Bento Grid de 6 Modalidades -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- 1. Musculação -->
+                    <article class="group relative h-[380px] rounded-3xl overflow-hidden border border-white/10 hover:border-energy/60 transition-all duration-500 reveal">
+                        <img
+                            src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=900&q=80"
+                            onerror="this.onerror=null; this.src='https://placehold.co/800x600/170C24/FFD600?text=Musculacao';"
+                            alt="Musculação na Body Action Academia"
+                            loading="lazy"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        >
+                        <div class="absolute inset-0 bg-gradient-to-t from-obsidian via-obsidian/65 to-royal/25 group-hover:via-obsidian/75 transition-colors"></div>
+                        <div class="absolute inset-0 p-6 sm:p-7 flex flex-col justify-between">
+                            <div class="flex items-center justify-between">
+                                <span class="px-3 py-1 rounded-full text-[11px] font-display font-bold uppercase tracking-wider bg-royal/80 border border-electric/50 text-white backdrop-blur-md">Força & Hipertrofia</span>
+                                <span class="w-10 h-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center text-energy group-hover:bg-energy group-hover:text-obsidian transition-colors">
+                                    <i data-lucide="dumbbell" class="w-5 h-5"></i>
+                                </span>
+                            </div>
+                            <div>
+                                <h3 class="font-display font-black uppercase text-2xl text-white mb-2">Musculação</h3>
+                                <p class="text-sm text-lavender leading-relaxed mb-5">
+                                    Treinamento de força personalizado com equipamentos modernos e acompanhamento próximo para evolução segura.
+                                </p>
+                                <div class="flex items-center gap-3">
+                                    <button onclick="openBookingModal('Musculação')" class="px-4 py-2.5 rounded-xl bg-energy hover:bg-gold text-obsidian font-display font-extrabold text-xs uppercase tracking-wider transition-colors cursor-pointer">
+                                        Agendar Aula
+                                    </button>
+                                    <a href="#horarios" onclick="filterSchedule('Todas')" class="px-4 py-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-white font-medium text-xs transition-colors">
+                                        Horários
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- 2. Jump -->
+                    <article class="group relative h-[380px] rounded-3xl overflow-hidden border border-white/10 hover:border-magenta/70 transition-all duration-500 reveal delay-100">
+                        <img
+                            src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=900&q=80"
+                            onerror="this.onerror=null; this.src='https://placehold.co/800x600/4A0E6E/FFD600?text=Jump';"
+                            alt="Aula coletiva de Jump"
+                            loading="lazy"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        >
+                        <div class="absolute inset-0 bg-gradient-to-t from-obsidian via-obsidian/65 to-magenta/30 group-hover:via-obsidian/75 transition-colors"></div>
+                        <div class="absolute inset-0 p-6 sm:p-7 flex flex-col justify-between">
+                            <div class="flex items-center justify-between">
+                                <span class="px-3 py-1 rounded-full text-[11px] font-display font-bold uppercase tracking-wider bg-magenta/80 border border-magenta text-white backdrop-blur-md">Alta Queima</span>
+                                <span class="w-10 h-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center text-energy group-hover:bg-energy group-hover:text-obsidian transition-colors">
+                                    <i data-lucide="zap" class="w-5 h-5"></i>
+                                </span>
+                            </div>
+                            <div>
+                                <h3 class="font-display font-black uppercase text-2xl text-white mb-2">Jump</h3>
+                                <p class="text-sm text-lavender leading-relaxed mb-5">
+                                    Energia contagiante no mini trampolim: alto gasto calórico, fortalecimento de pernas e baixo impacto articular.
+                                </p>
+                                <div class="flex items-center gap-3">
+                                    <button onclick="openBookingModal('Jump')" class="px-4 py-2.5 rounded-xl bg-energy hover:bg-gold text-obsidian font-display font-extrabold text-xs uppercase tracking-wider transition-colors cursor-pointer">
+                                        Agendar Aula
+                                    </button>
+                                    <a href="#horarios" onclick="filterSchedule('Jump')" class="px-4 py-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-white font-medium text-xs transition-colors">
+                                        Ver Horários
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- 3. Ritbox -->
+                    <article class="group relative h-[380px] rounded-3xl overflow-hidden border border-white/10 hover:border-energy/70 transition-all duration-500 reveal delay-200">
+                        <img
+                            src="https://images.unsplash.com/photo-1549060279-7e168fcee0c2?auto=format&fit=crop&w=900&q=80"
+                            onerror="this.onerror=null; this.src='https://placehold.co/800x600/4A0E6E/FFD600?text=Ritbox';"
+                            alt="Aula de Ritbox na Body Action"
+                            loading="lazy"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        >
+                        <div class="absolute inset-0 bg-gradient-to-t from-obsidian via-obsidian/65 to-electric/35 group-hover:via-obsidian/75 transition-colors"></div>
+                        <div class="absolute inset-0 p-6 sm:p-7 flex flex-col justify-between">
+                            <div class="flex items-center justify-between">
+                                <span class="px-3 py-1 rounded-full text-[11px] font-display font-bold uppercase tracking-wider bg-electric/80 border border-electric text-white backdrop-blur-md">Treino Ritmado</span>
+                                <span class="w-10 h-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center text-energy group-hover:bg-energy group-hover:text-obsidian transition-colors">
+                                    <i data-lucide="flame" class="w-5 h-5"></i>
+                                </span>
+                            </div>
+                            <div>
+                                <h3 class="font-display font-black uppercase text-2xl text-white mb-2">Ritbox</h3>
+                                <p class="text-sm text-lavender leading-relaxed mb-5">
+                                    Treino ritmado de alta intensidade que une música, movimento, suor e superação do começo ao fim.
+                                </p>
+                                <div class="flex items-center gap-3">
+                                    <button onclick="openBookingModal('Ritbox')" class="px-4 py-2.5 rounded-xl bg-energy hover:bg-gold text-obsidian font-display font-extrabold text-xs uppercase tracking-wider transition-colors cursor-pointer">
+                                        Agendar Aula
+                                    </button>
+                                    <a href="#horarios" onclick="filterSchedule('Ritbox')" class="px-4 py-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-white font-medium text-xs transition-colors">
+                                        Ver Horários
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- 4. Funcional -->
+                    <article class="group relative h-[380px] rounded-3xl overflow-hidden border border-white/10 hover:border-energy/60 transition-all duration-500 reveal">
+                        <img
+                            src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=900&q=80"
+                            onerror="this.onerror=null; this.src='https://placehold.co/800x600/170C24/FFD600?text=Funcional';"
+                            alt="Treinamento Funcional"
+                            loading="lazy"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        >
+                        <div class="absolute inset-0 bg-gradient-to-t from-obsidian via-obsidian/65 to-royal/30 group-hover:via-obsidian/75 transition-colors"></div>
+                        <div class="absolute inset-0 p-6 sm:p-7 flex flex-col justify-between">
+                            <div class="flex items-center justify-between">
+                                <span class="px-3 py-1 rounded-full text-[11px] font-display font-bold uppercase tracking-wider bg-royal/80 border border-electric/50 text-white backdrop-blur-md">Agilidade & Core</span>
+                                <span class="w-10 h-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center text-energy group-hover:bg-energy group-hover:text-obsidian transition-colors">
+                                    <i data-lucide="activity" class="w-5 h-5"></i>
+                                </span>
+                            </div>
+                            <div>
+                                <h3 class="font-display font-black uppercase text-2xl text-white mb-2">Funcional</h3>
+                                <p class="text-sm text-lavender leading-relaxed mb-5">
+                                    Circuitos dinâmicos para desenvolver força integrada, resistência, equilíbrio e preparo para o dia a dia.
+                                </p>
+                                <div class="flex items-center gap-3">
+                                    <button onclick="openBookingModal('Funcional')" class="px-4 py-2.5 rounded-xl bg-energy hover:bg-gold text-obsidian font-display font-extrabold text-xs uppercase tracking-wider transition-colors cursor-pointer">
+                                        Agendar Aula
+                                    </button>
+                                    <a href="#horarios" onclick="filterSchedule('Funcional')" class="px-4 py-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-white font-medium text-xs transition-colors">
+                                        Ver Horários
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- 5. Ritmos -->
+                    <article class="group relative h-[380px] rounded-3xl overflow-hidden border border-white/10 hover:border-magenta/70 transition-all duration-500 reveal delay-100">
+                        <img
+                            src="https://images.unsplash.com/photo-1524594152303-9fd13543fe6e?auto=format&fit=crop&w=900&q=80"
+                            onerror="this.onerror=null; this.src='https://placehold.co/800x600/4A0E6E/FFD600?text=Ritmos';"
+                            alt="Aula de Ritmos e Dança"
+                            loading="lazy"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        >
+                        <div class="absolute inset-0 bg-gradient-to-t from-obsidian via-obsidian/65 to-magenta/30 group-hover:via-obsidian/75 transition-colors"></div>
+                        <div class="absolute inset-0 p-6 sm:p-7 flex flex-col justify-between">
+                            <div class="flex items-center justify-between">
+                                <span class="px-3 py-1 rounded-full text-[11px] font-display font-bold uppercase tracking-wider bg-magenta/80 border border-magenta text-white backdrop-blur-md">Dança & Endorfina</span>
+                                <span class="w-10 h-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center text-energy group-hover:bg-energy group-hover:text-obsidian transition-colors">
+                                    <i data-lucide="music" class="w-5 h-5"></i>
+                                </span>
+                            </div>
+                            <div>
+                                <h3 class="font-display font-black uppercase text-2xl text-white mb-2">Ritmos</h3>
+                                <p class="text-sm text-lavender leading-relaxed mb-5">
+                                    Coreografias envolventes que unem diversão, coordenação motora, leveza e muita queima calórica.
+                                </p>
+                                <div class="flex items-center gap-3">
+                                    <button onclick="openBookingModal('Ritmos')" class="px-4 py-2.5 rounded-xl bg-energy hover:bg-gold text-obsidian font-display font-extrabold text-xs uppercase tracking-wider transition-colors cursor-pointer">
+                                        Agendar Aula
+                                    </button>
+                                    <a href="#horarios" onclick="filterSchedule('Ritmos')" class="px-4 py-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-white font-medium text-xs transition-colors">
+                                        Ver Horários
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- 6. Avaliação Física Completa -->
+                    <article class="group relative h-[380px] rounded-3xl overflow-hidden border border-energy/40 hover:border-energy transition-all duration-500 reveal delay-200">
+                        <img
+                            src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=900&q=80"
+                            onerror="this.onerror=null; this.src='https://placehold.co/800x600/170C24/FFD600?text=Avaliacao+Fisica';"
+                            alt="Avaliação Física Completa"
+                            loading="lazy"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        >
+                        <div class="absolute inset-0 bg-gradient-to-t from-obsidian via-obsidian/70 to-royal/40 group-hover:via-obsidian/80 transition-colors"></div>
+                        <div class="absolute inset-0 p-6 sm:p-7 flex flex-col justify-between">
+                            <div class="flex items-center justify-between">
+                                <span class="px-3 py-1 rounded-full text-[11px] font-display font-extrabold uppercase tracking-wider bg-energy text-obsidian">Diagnóstico Preciso</span>
+                                <span class="w-10 h-10 rounded-full bg-energy/20 backdrop-blur-md flex items-center justify-center text-energy group-hover:bg-energy group-hover:text-obsidian transition-colors">
+                                    <i data-lucide="clipboard-check" class="w-5 h-5"></i>
+                                </span>
+                            </div>
+                            <div>
+                                <h3 class="font-display font-black uppercase text-2xl text-white mb-2">Avaliação Física</h3>
+                                <p class="text-sm text-lavender leading-relaxed mb-5">
+                                    Mapeamento completo de composição corporal, postura e metas reais para acelerar seus resultados com ciência.
+                                </p>
+                                <div class="flex items-center gap-3">
+                                    <button onclick="openBookingModal('Avaliação Física Completa')" class="px-4 py-2.5 rounded-xl bg-energy hover:bg-gold text-obsidian font-display font-extrabold text-xs uppercase tracking-wider transition-colors cursor-pointer">
+                                        Agendar Avaliação
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================================================
+             3.6 EXPERIÊNCIA & COMUNIDADE BODY ACTION (GALERIA & PROVA SOCIAL)
+        ========================================================= -->
+        <section id="comunidade" class="relative py-8 px-4 sm:px-6 lg:px-10 bg-gradient-to-b from-transparent via-royal/25 to-transparent overflow-hidden">
+            <div class="absolute top-1/4 -right-24 w-96 h-96 bg-magenta/25 rounded-full blur-[150px] pointer-events-none"></div>
+            <div class="absolute bottom-0 left-1/3 w-[500px] h-[300px] bg-electric/25 rounded-full blur-[150px] pointer-events-none"></div>
+
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center max-w-3xl mx-auto mb-6 reveal">
+                    <div class="inline-flex items-center gap-2 text-energy font-display font-bold text-xs uppercase tracking-[0.25em] mb-3">
+                        <span class="w-6 h-[2px] bg-energy"></span>
+                        <span>Comunidade Body Action</span>
+                        <span class="w-6 h-[2px] bg-energy"></span>
+                    </div>
+                    <h2 class="font-display font-black uppercase text-3xl sm:text-4xl lg:text-5xl mb-4">
+                        MUITO ALÉM DAS <span class="text-energy italic">QUATRO PAREDES</span>
+                    </h2>
+                    <p class="text-lavender text-sm sm:text-base">
+                        Dos aulões abertos do projeto <strong class="text-white">Body Action na Praça</strong> às nossas confraternizações temáticas e linha exclusiva de camisetas: aqui você encontra uma família em movimento.
+                    </p>
+                </div>
+
+                <!-- Mosaico Assimétrico Cinematográfico -->
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-5 mb-6 reveal">
+                    <!-- Destaque Principal: Body Action na Praça -->
+                    <div class="md:col-span-7 relative h-[320px] sm:h-[400px] rounded-3xl overflow-hidden border border-white/10 group">
+                        <img
+                            src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?auto=format&fit=crop&w=1200&q=80"
+                            onerror="this.onerror=null; this.src='https://placehold.co/1000x600/4A0E6E/FFD600?text=Body+Action+na+Praca';"
+                            alt="Evento Body Action na Praça"
+                            loading="lazy"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                        >
+                        <div class="absolute inset-0 bg-gradient-to-t from-obsidian via-obsidian/30 to-transparent"></div>
+                        <div class="absolute bottom-6 left-6 right-6">
+                            <span class="inline-block px-3 py-1 rounded-full bg-energy text-obsidian font-display font-black text-[11px] uppercase tracking-wider mb-2">Evento Proprietário</span>
+                            <h3 class="font-display font-black uppercase text-2xl sm:text-3xl text-white">Body Action na Praça</h3>
+                            <p class="text-sm text-lavender mt-1">Aulões gratuitos de Funcional, Jump e Ritbox ao ar livre levando energia para toda a cidade.</p>
+                        </div>
+                    </div>
+
+                    <!-- Coluna Direita com 2 Cards Empilhados -->
+                    <div class="md:col-span-5 grid grid-cols-1 gap-5">
+                        <div class="relative h-[190px] rounded-3xl overflow-hidden border border-white/10 group">
+                            <img
+                                src="https://images.unsplash.com/photo-1534258936925-c58bed479fcb?auto=format&fit=crop&w=900&q=80"
+                                onerror="this.onerror=null; this.src='https://placehold.co/800x400/170C24/FFD600?text=Aulas+Tematicas';"
+                                alt="Aulas temáticas e eventos da comunidade"
+                                loading="lazy"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                            >
+                            <div class="absolute inset-0 bg-gradient-to-t from-obsidian via-royal/40 to-transparent"></div>
+                            <div class="absolute bottom-5 left-5 right-5">
+                                <h3 class="font-display font-black uppercase text-lg text-white">Eventos Temáticos o Ano Inteiro</h3>
+                                <p class="text-xs text-lavender mt-1">Arraiá Body Action, Halloween, Outubro Rosa e desafios coletivos.</p>
+                            </div>
+                        </div>
+
+                        <div class="relative h-[190px] rounded-3xl overflow-hidden border border-white/10 group">
+                            <img
+                                src="https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?auto=format&fit=crop&w=900&q=80"
+                                onerror="this.onerror=null; this.src='https://placehold.co/800x400/4A0E6E/FFD600?text=Linha+Oficial+BodyAction';"
+                                alt="Camisetas oficiais e estrutura renovada"
+                                loading="lazy"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                            >
+                            <div class="absolute inset-0 bg-gradient-to-t from-obsidian via-magenta/30 to-transparent"></div>
+                            <div class="absolute bottom-5 left-5 right-5">
+                                <h3 class="font-display font-black uppercase text-lg text-white">Vista a Camisa Body Action</h3>
+                                <p class="text-xs text-lavender mt-1">Linha exclusiva de camisetas e regatas em várias cores e modelos.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Depoimentos em Destaque (Prova Social) -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="glass-card rounded-3xl p-6 sm:p-7 flex flex-col justify-between reveal">
+                        <div>
+                            <div class="flex items-center gap-1 text-energy mb-4">
+                                <i data-lucide="star" class="w-4 h-4 fill-energy"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-energy"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-energy"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-energy"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-energy"></i>
+                            </div>
+                            <p class="text-sm text-lavender leading-relaxed italic mb-6">
+                                "Comecei aos 44 anos achando que não ia me adaptar, e hoje a Body Action é o melhor momento do meu dia. Ganhei força, disposição e amigas incríveis no Jump!"
+                            </p>
+                        </div>
+                        <div class="flex items-center gap-3 pt-4 border-t border-white/10">
+                            <div class="w-10 h-10 rounded-full bg-gradient-to-br from-electric to-magenta flex items-center justify-center font-display font-bold text-sm">CM</div>
+                            <div>
+                                <h4 class="font-display font-bold text-sm text-white">Cláudia Mendes</h4>
+                                <span class="text-xs text-lavender">Aluna há 3 anos • Musculação & Jump</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="glass-card rounded-3xl p-6 sm:p-7 flex flex-col justify-between reveal delay-100">
+                        <div>
+                            <div class="flex items-center gap-1 text-energy mb-4">
+                                <i data-lucide="star" class="w-4 h-4 fill-energy"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-energy"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-energy"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-energy"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-energy"></i>
+                            </div>
+                            <p class="text-sm text-lavender leading-relaxed italic mb-6">
+                                "O Ritbox aqui tem uma energia surreal! Mesmo depois de um dia cansativo de trabalho, saio da aula renovada. A estrutura nova ficou espetacular."
+                            </p>
+                        </div>
+                        <div class="flex items-center gap-3 pt-4 border-t border-white/10">
+                            <div class="w-10 h-10 rounded-full bg-gradient-to-br from-royal to-electric flex items-center justify-center font-display font-bold text-sm">FR</div>
+                            <div>
+                                <h4 class="font-display font-bold text-sm text-white">Fernanda Rocha</h4>
+                                <span class="text-xs text-lavender">Aluna há 2 anos • Ritbox & Funcional</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="glass-card rounded-3xl p-6 sm:p-7 flex flex-col justify-between reveal delay-200">
+                        <div>
+                            <div class="flex items-center gap-1 text-energy mb-4">
+                                <i data-lucide="star" class="w-4 h-4 fill-energy"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-energy"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-energy"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-energy"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-energy"></i>
+                            </div>
+                            <p class="text-sm text-lavender leading-relaxed italic mb-6">
+                                "Os professores realmente acompanham cada exercício. Fiz a avaliação física completa e em 6 meses bati metas que nunca imaginei alcançar."
+                            </p>
+                        </div>
+                        <div class="flex items-center gap-3 pt-4 border-t border-white/10">
+                            <div class="w-10 h-10 rounded-full bg-gradient-to-br from-energy to-gold text-obsidian flex items-center justify-center font-display font-bold text-sm">RS</div>
+                            <div>
+                                <h4 class="font-display font-bold text-sm text-white">Rafael Silva</h4>
+                                <span class="text-xs text-lavender">Aluno há 1 ano • Musculação</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================================================
+             3.7 PLANOS & MATRÍCULA
+        ========================================================= -->
+        <section id="planos" class="relative py-8 px-4 sm:px-6 lg:px-10 overflow-hidden">
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-electric/20 rounded-full blur-[160px] pointer-events-none"></div>
+
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center max-w-2xl mx-auto mb-8 reveal">
+                    <div class="inline-flex items-center gap-2 text-energy font-display font-bold text-xs uppercase tracking-[0.25em] mb-3">
+                        <span class="w-6 h-[2px] bg-energy"></span>
+                        <span>Planos & Matrícula</span>
+                        <span class="w-6 h-[2px] bg-energy"></span>
+                    </div>
+                    <h2 class="font-display font-black uppercase text-3xl sm:text-4xl lg:text-5xl mb-4">
+                        INVISTA NA SUA <span class="text-energy italic">MELHOR VERSÃO</span>
+                    </h2>
+                    <p class="text-lavender text-sm sm:text-base">
+                        Escolha o plano ideal para sua rotina. Transparência total e acesso à estrutura renovada da Body Action Academia.
+                    </p>
+                </div>
+
+                <!-- Grid de 3 Planos -->
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
+                    <!-- Plano Mensal -->
+                    <div class="glass-card rounded-3xl p-8 flex flex-col justify-between reveal">
+                        <div>
+                            <span class="text-xs font-display font-bold uppercase tracking-[0.2em] text-lavender">Flexibilidade</span>
+                            <h3 class="font-display font-black uppercase text-2xl text-white mt-2">Plano Mensal</h3>
+                            <p class="text-xs text-lavender mt-2">Ideal para começar sem fidelidade e conhecer nossa rotina.</p>
+
+                            <div class="my-8 pb-6 border-b border-white/10">
+                                <div class="flex items-baseline gap-1">
+                                    <span class="text-sm text-lavender font-medium">R$</span>
+                                    <span class="font-display font-black text-4xl sm:text-5xl text-white">129</span>
+                                    <span class="text-sm text-lavender">/mês</span>
+                                </div>
+                                <span class="text-xs text-lavender/80 block mt-1">Renovação mensal flexível</span>
+                            </div>
+
+                            <ul class="space-y-3.5 text-sm text-lavender mb-8">
+                                <li class="flex items-center gap-3">
+                                    <i data-lucide="check-circle-2" class="w-5 h-5 text-electric shrink-0"></i>
+                                    <span>Acesso livre à Musculação</span>
+                                </li>
+                                <li class="flex items-center gap-3">
+                                    <i data-lucide="check-circle-2" class="w-5 h-5 text-electric shrink-0"></i>
+                                    <span>Aulas Coletivas (Jump, Ritbox, Funcional e Ritmos)</span>
+                                </li>
+                                <li class="flex items-center gap-3">
+                                    <i data-lucide="check-circle-2" class="w-5 h-5 text-electric shrink-0"></i>
+                                    <span>Acompanhamento de professores em sala</span>
+                                </li>
+                                <li class="flex items-center gap-3">
+                                    <i data-lucide="check-circle-2" class="w-5 h-5 text-electric shrink-0"></i>
+                                    <span>Sem taxa de cancelamento</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <button onclick="openBookingModal('Matrícula - Plano Mensal')" class="w-full py-4 rounded-xl bg-white/10 hover:bg-white/15 border border-white/15 text-white font-display font-bold uppercase tracking-wider text-xs transition-all cursor-pointer">
+                            Escolher Plano Mensal
+                        </button>
+                    </div>
+
+                    <!-- Plano Anual (RECOMENDADO / DESTAQUE) -->
+                    <div class="plan-featured rounded-3xl p-8 sm:p-10 lg:-translate-y-4 shadow-glow-purple flex flex-col justify-between reveal delay-100">
+                        <!-- Badge Mais Escolhido -->
+                        <div class="absolute -top-4 left-1/2 -translate-x-1/2 px-5 py-1.5 rounded-full bg-energy text-obsidian font-display font-black uppercase text-[11px] tracking-widest shadow-glow-yellow whitespace-nowrap">
+                            ★ Mais Escolhido
+                        </div>
+
+                        <div>
+                            <span class="text-xs font-display font-bold uppercase tracking-[0.2em] text-energy">Transformação Completa</span>
+                            <h3 class="font-display font-black uppercase text-3xl text-white mt-2">Plano Anual</h3>
+                            <p class="text-xs text-lavender mt-2">O melhor custo-benefício para quem busca resultados consistentes o ano inteiro.</p>
+
+                            <div class="my-8 pb-6 border-b border-white/15">
+                                <div class="flex items-baseline gap-1">
+                                    <span class="text-sm text-energy font-bold">R$</span>
+                                    <span class="font-display font-black text-5xl sm:text-6xl text-energy italic">99</span>
+                                    <span class="text-sm text-lavender">/mês</span>
+                                </div>
+                                <span class="text-xs text-energy/90 font-medium block mt-1.5">Economia de R$ 360 no ano + Avaliação inclusa</span>
+                            </div>
+
+                            <ul class="space-y-4 text-sm text-white mb-9">
+                                <li class="flex items-center gap-3">
+                                    <i data-lucide="check-circle-2" class="w-5 h-5 text-energy shrink-0"></i>
+                                    <span><strong>Acesso ilimitado</strong> à Musculação</span>
+                                </li>
+                                <li class="flex items-center gap-3">
+                                    <i data-lucide="check-circle-2" class="w-5 h-5 text-energy shrink-0"></i>
+                                    <span><strong>Todas as Aulas Coletivas</strong> (Jump, Ritbox, Funcional e Ritmos)</span>
+                                </li>
+                                <li class="flex items-center gap-3">
+                                    <i data-lucide="check-circle-2" class="w-5 h-5 text-energy shrink-0"></i>
+                                    <span><strong>1 Avaliação Física Completa</strong> gratuita na matrícula</span>
+                                </li>
+                                <li class="flex items-center gap-3">
+                                    <i data-lucide="check-circle-2" class="w-5 h-5 text-energy shrink-0"></i>
+                                    <span>Treino periodizado atualizado periodicamente</span>
+                                </li>
+                                <li class="flex items-center gap-3">
+                                    <i data-lucide="check-circle-2" class="w-5 h-5 text-energy shrink-0"></i>
+                                    <span>Prioridade em vagas de eventos especiais</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <button onclick="openBookingModal('Matrícula - Plano Anual (Mais Escolhido)')" class="w-full py-4 rounded-xl bg-energy hover:bg-gold text-obsidian font-display font-black uppercase tracking-wider text-sm flex items-center justify-center gap-2 btn-energy shadow-glow-yellow cursor-pointer">
+                            <span>Garantir Plano Anual</span>
+                            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </button>
+                    </div>
+
+                    <!-- Plano Semestral -->
+                    <div class="glass-card rounded-3xl p-8 flex flex-col justify-between reveal delay-200">
+                        <div>
+                            <span class="text-xs font-display font-bold uppercase tracking-[0.2em] text-lavender">Equilíbrio</span>
+                            <h3 class="font-display font-black uppercase text-2xl text-white mt-2">Plano Semestral</h3>
+                            <p class="text-xs text-lavender mt-2">Compromisso ideal para criar hábito e ver resultados reais.</p>
+
+                            <div class="my-8 pb-6 border-b border-white/10">
+                                <div class="flex items-baseline gap-1">
+                                    <span class="text-sm text-lavender font-medium">R$</span>
+                                    <span class="font-display font-black text-4xl sm:text-5xl text-white">114</span>
+                                    <span class="text-sm text-lavender">/mês</span>
+                                </div>
+                                <span class="text-xs text-lavender/80 block mt-1">Plano de 6 meses com desconto especial</span>
+                            </div>
+
+                            <ul class="space-y-3.5 text-sm text-lavender mb-8">
+                                <li class="flex items-center gap-3">
+                                    <i data-lucide="check-circle-2" class="w-5 h-5 text-electric shrink-0"></i>
+                                    <span>Acesso livre à Musculação</span>
+                                </li>
+                                <li class="flex items-center gap-3">
+                                    <i data-lucide="check-circle-2" class="w-5 h-5 text-electric shrink-0"></i>
+                                    <span>Aulas Coletivas (Jump, Ritbox, Funcional e Ritmos)</span>
+                                </li>
+                                <li class="flex items-center gap-3">
+                                    <i data-lucide="check-circle-2" class="w-5 h-5 text-electric shrink-0"></i>
+                                    <span>Desconto especial na Avaliação Física</span>
+                                </li>
+                                <li class="flex items-center gap-3">
+                                    <i data-lucide="check-circle-2" class="w-5 h-5 text-electric shrink-0"></i>
+                                    <span>Montagem de ficha personalizada</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <button onclick="openBookingModal('Matrícula - Plano Semestral')" class="w-full py-4 rounded-xl bg-white/10 hover:bg-white/15 border border-white/15 text-white font-display font-bold uppercase tracking-wider text-xs transition-all cursor-pointer">
+                            Escolher Plano Semestral
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================================================
+             3.8 GRADE DE HORÁRIOS INTERATIVA (RF03)
+        ========================================================= -->
+        <section id="horarios" class="relative py-8 px-4 sm:px-6 lg:px-10 bg-royal/20 backdrop-blur-sm border-y border-white/10">
+            <div class="max-w-7xl mx-auto">
+                <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-4 mb-5 reveal">
+                    <div>
+                        <div class="inline-flex items-center gap-2 text-energy font-display font-bold text-xs uppercase tracking-[0.25em] mb-3">
+                            <span class="w-8 h-[2px] bg-energy"></span>
+                            <span>Grade Coletiva</span>
+                        </div>
+                        <h2 class="font-display font-black uppercase text-3xl sm:text-4xl lg:text-5xl">
+                            HORÁRIOS DAS <span class="text-energy italic">AULAS</span>
+                        </h2>
+                    </div>
+
+                    <!-- Filtros Interativos por Modalidade -->
+                    <div class="flex flex-wrap gap-2" role="tablist" aria-label="Filtrar aulas por modalidade">
+                        <button onclick="filterSchedule('Todas')" data-filter="Todas" class="schedule-filter-btn active px-4 py-2.5 rounded-xl font-display font-bold text-xs uppercase tracking-wider bg-energy text-obsidian transition-all cursor-pointer">
+                            Todas
+                        </button>
+                        <button onclick="filterSchedule('Jump')" data-filter="Jump" class="schedule-filter-btn px-4 py-2.5 rounded-xl font-display font-bold text-xs uppercase tracking-wider bg-white/5 text-lavender hover:text-white border border-white/10 transition-all cursor-pointer">
+                            Jump
+                        </button>
+                        <button onclick="filterSchedule('Ritbox')" data-filter="Ritbox" class="schedule-filter-btn px-4 py-2.5 rounded-xl font-display font-bold text-xs uppercase tracking-wider bg-white/5 text-lavender hover:text-white border border-white/10 transition-all cursor-pointer">
+                            Ritbox
+                        </button>
+                        <button onclick="filterSchedule('Funcional')" data-filter="Funcional" class="schedule-filter-btn px-4 py-2.5 rounded-xl font-display font-bold text-xs uppercase tracking-wider bg-white/5 text-lavender hover:text-white border border-white/10 transition-all cursor-pointer">
+                            Funcional
+                        </button>
+                        <button onclick="filterSchedule('Ritmos')" data-filter="Ritmos" class="schedule-filter-btn px-4 py-2.5 rounded-xl font-display font-bold text-xs uppercase tracking-wider bg-white/5 text-lavender hover:text-white border border-white/10 transition-all cursor-pointer">
+                            Ritmos
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Grid Dinâmico de Horários -->
+                <div id="schedule-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 reveal">
+                    <!-- Preenchido dinamicamente via JavaScript -->
+                </div>
+
+                <p class="text-center text-xs text-lavender mt-4">
+                    * Musculação disponível durante todo o horário de funcionamento: <strong class="text-white">Seg a Sex das 06h às 22h</strong> e <strong class="text-white">Sábados das 08h às 13h</strong>.
+                </p>
+            </div>
+        </section>
+
+        <!-- =========================================================
+             LOCALIZAÇÃO & CONTATO
+        ========================================================= -->
+        <section id="contato" class="relative py-8 px-4 sm:px-6 lg:px-10">
+            <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+                <!-- Informações de Contato -->
+                <div class="lg:col-span-5 glass-card rounded-3xl p-8 sm:p-10 flex flex-col justify-between reveal">
+                    <div>
+                        <div class="inline-flex items-center gap-2 text-energy font-display font-bold text-xs uppercase tracking-[0.25em] mb-3">
+                            <span class="w-8 h-[2px] bg-energy"></span>
+                            <span>Onde Estamos</span>
+                        </div>
+                        <h2 class="font-display font-black uppercase text-3xl sm:text-4xl mb-6">
+                            VENHA NOS <span class="text-energy italic">VISITAR</span>
+                        </h2>
+
+                        <div class="space-y-6">
+                            <div class="flex items-start gap-4">
+                                <div class="w-11 h-11 rounded-xl bg-royal/60 border border-electric/40 flex items-center justify-center shrink-0">
+                                    <i data-lucide="map-pin" class="w-5 h-5 text-energy"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-display font-bold text-sm uppercase text-white">Endereço</h3>
+                                    <p class="text-sm text-lavender mt-1">Rua Principal, 450 — Centro<br>Estrutura renovada com fácil estacionamento.</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-4">
+                                <div class="w-11 h-11 rounded-xl bg-royal/60 border border-electric/40 flex items-center justify-center shrink-0">
+                                    <i data-lucide="clock" class="w-5 h-5 text-energy"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-display font-bold text-sm uppercase text-white">Funcionamento</h3>
+                                    <p class="text-sm text-lavender mt-1">
+                                        Segunda a Sexta: <span class="text-white font-medium">06h00 às 22h00</span><br>
+                                        Sábados: <span class="text-white font-medium">08h00 às 13h00</span>
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-4">
+                                <div class="w-11 h-11 rounded-xl bg-royal/60 border border-electric/40 flex items-center justify-center shrink-0">
+                                    <i data-lucide="phone" class="w-5 h-5 text-energy"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-display font-bold text-sm uppercase text-white">Atendimento</h3>
+                                    <p class="text-sm text-lavender mt-1">WhatsApp: (19) 99999-9999<br>Instagram: @bodyactionacademia</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-wrap gap-3 mt-8 pt-6 border-t border-white/10">
+                        <button onclick="openBookingModal('Contato / Visita')" class="flex-1 py-3.5 px-5 rounded-xl bg-energy hover:bg-gold text-obsidian font-display font-extrabold text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-colors cursor-pointer">
+                            <i data-lucide="message-circle" class="w-4 h-4"></i>
+                            <span>WhatsApp</span>
+                        </button>
+                        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="flex-1 py-3.5 px-5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/15 text-white font-display font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-colors">
+                            <i data-lucide="instagram" class="w-4 h-4 text-magenta"></i>
+                            <span>Instagram</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Mapa Estilizado Dark Mode -->
+                <div class="lg:col-span-7 relative min-h-[380px] rounded-3xl overflow-hidden border border-white/10 glass-card flex items-center justify-center reveal delay-100">
+                    <!-- Padrão de grade cartográfica estilizada em Dark Mode -->
+                    <div class="absolute inset-0 opacity-20" style="background-image: linear-gradient(rgba(142,36,170,0.4) 1px, transparent 1px), linear-gradient(90deg, rgba(142,36,170,0.4) 1px, transparent 1px); background-size: 40px 40px;"></div>
+                    <div class="absolute inset-0 bg-gradient-to-br from-royal/35 via-obsidian/70 to-obsidian"></div>
+
+                    <!-- Pin Central Animado -->
+                    <div class="relative z-10 text-center p-6 max-w-md">
+                        <div class="relative inline-flex items-center justify-center mb-5">
+                            <span class="absolute w-24 h-24 rounded-full bg-energy/20 animate-ping"></span>
+                            <div class="w-16 h-16 rounded-2xl bg-energy text-obsidian flex items-center justify-center shadow-glow-yellow relative z-10">
+                                <i data-lucide="map-pin" class="w-8 h-8"></i>
+                            </div>
+                        </div>
+                        <h3 class="font-display font-black uppercase text-2xl text-white">Body Action Academia</h3>
+                        <p class="text-sm text-lavender mt-2 mb-6">
+                            Localização central de fácil acesso para você não perder nenhum treino.
+                        </p>
+                        <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-white/10 hover:bg-energy hover:text-obsidian border border-white/20 hover:border-energy text-white font-display font-bold text-xs uppercase tracking-wider transition-all">
+                            <span>Abrir no Google Maps</span>
+                            <i data-lucide="external-link" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================================================
+             3.9 CTA FINAL CINEMATOGRÁFICO
+        ========================================================= -->
+        <section class="relative py-6 px-4 sm:px-6 lg:px-10">
+            <div class="max-w-7xl mx-auto relative rounded-[2rem] overflow-hidden border border-electric/40 p-8 sm:p-10 text-center shadow-glow-purple reveal">
+                <!-- Background Dramático -->
+                <div class="absolute inset-0 bg-gradient-to-br from-royal via-night to-obsidian z-0"></div>
+                <div class="absolute -top-24 -right-24 w-80 h-80 bg-magenta/35 rounded-full blur-[120px] pointer-events-none"></div>
+                <div class="absolute -bottom-24 -left-24 w-80 h-80 bg-electric/40 rounded-full blur-[120px] pointer-events-none"></div>
+
+                <div class="relative z-10 max-w-3xl mx-auto">
+                    <span class="inline-block px-4 py-1.5 rounded-full bg-white/10 border border-white/15 text-energy font-display font-bold text-xs uppercase tracking-[0.2em] mb-6">
+                        Comece Hoje Mesmo
+                    </span>
+                    <h2 class="font-display font-black uppercase text-3xl sm:text-5xl lg:text-6xl leading-[1.05] mb-6">
+                        O PRIMEIRO PASSO DEFINE A SUA <span class="text-energy italic">PRÓXIMA VERSÃO.</span>
+                    </h2>
+                    <p class="text-lavender text-base sm:text-lg mb-9 max-w-xl mx-auto">
+                        Agende sua aula experimental gratuita e descubra por que há 11 anos transformamos vidas com força, movimento e energia.
+                    </p>
+                    <button onclick="openBookingModal('Falar no WhatsApp - CTA Final')" class="inline-flex items-center justify-center gap-3 px-9 py-4.5 py-4 rounded-xl bg-energy hover:bg-gold text-obsidian font-display font-black uppercase tracking-wider text-sm btn-energy shadow-glow-yellow cursor-pointer">
+                        <i data-lucide="message-circle" class="w-5 h-5"></i>
+                        <span>Falar no WhatsApp Agora</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- =========================================================
+         FOOTER MINIMALISTA
+    ========================================================= -->
+    <footer class="relative z-10 border-t border-white/10 bg-[#12081F]/80 backdrop-blur-md py-6 px-4 sm:px-6 lg:px-10">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="flex items-center gap-3">
+                <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-royal via-electric to-magenta flex items-center justify-center">
+                    <span class="font-display font-black italic text-energy text-base">BA</span>
+                </div>
+                <div>
+                    <span class="font-display font-black text-lg tracking-tight text-white">BODY<span class="text-energy italic">ACTION</span></span>
+                    <p class="text-xs text-lavender">Uma nova academia, a mesma essência.</p>
+                </div>
+            </div>
+
+            <div class="flex flex-wrap items-center justify-center gap-6 text-xs text-lavender font-medium">
+                <a href="#manifesto" class="hover:text-energy transition-colors">A Academia</a>
+                <a href="#modalidades" class="hover:text-energy transition-colors">Modalidades</a>
+                <a href="#planos" class="hover:text-energy transition-colors">Planos</a>
+                <a href="#horarios" class="hover:text-energy transition-colors">Horários</a>
+                <a href="#contato" class="hover:text-energy transition-colors">Contato</a>
+            </div>
+
+            <p class="text-xs text-lavender/70 text-center md:text-right">
+                © <span id="current-year">2026</span> Body Action Academia.<br class="sm:hidden"> Todos os direitos reservados.
+            </p>
+        </div>
+    </footer>
+
+    <!-- =========================================================
+         RF02 — BOTÃO FLUTUANTE DE WHATSAPP
+    ========================================================= -->
+    <button onclick="openBookingModal('Atendimento Rápido WhatsApp')" aria-label="Falar no WhatsApp" class="fixed bottom-6 right-6 z-40 w-14 h-14 rounded-2xl bg-energy hover:bg-gold text-obsidian shadow-glow-yellow flex items-center justify-center hover:scale-110 transition-transform cursor-pointer group">
+        <i data-lucide="message-circle" class="w-7 h-7 fill-obsidian/10"></i>
+        <span class="absolute right-16 bg-night border border-white/15 text-white text-xs font-semibold px-3 py-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none shadow-lg">
+            Agendar Aula Grátis
+        </span>
+    </button>
+
+    <!-- =========================================================
+         RF01 — MODAL INTERATIVO DE AGENDAMENTO (SEM ALERT)
+    ========================================================= -->
+    <div id="booking-modal" class="fixed inset-0 z-[70] hidden items-center justify-center p-4 bg-obsidian/85 backdrop-blur-xl transition-opacity duration-300 opacity-0" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <div class="relative w-full max-w-md glass-card rounded-3xl p-7 sm:p-8 border-electric/50 shadow-glow-purple transform transition-transform duration-300 scale-95" id="booking-modal-card">
+            <!-- Botão Fechar -->
+            <button onclick="closeBookingModal()" aria-label="Fechar modal" class="absolute top-5 right-5 p-2 rounded-xl bg-white/5 hover:bg-white/15 text-lavender hover:text-white transition-colors cursor-pointer">
+                <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+
+            <!-- Cabeçalho do Modal -->
+            <div class="mb-6">
+                <span class="inline-block px-3 py-1 rounded-full bg-energy/15 border border-energy/40 text-energy font-display font-bold text-[10px] uppercase tracking-widest mb-3">
+                    Aula Experimental Gratuita
+                </span>
+                <h3 id="modal-title" class="font-display font-black uppercase text-2xl text-white">
+                    RESERVE SUA <span class="text-energy italic">EXPERIÊNCIA</span>
+                </h3>
+                <p class="text-xs text-lavender mt-1.5">
+                    Preencha seus dados abaixo e já iniciaremos seu atendimento personalizado no WhatsApp.
+                </p>
+            </div>
+
+            <!-- Formulário -->
+            <form id="booking-form" class="space-y-4">
+                <div>
+                    <label for="lead-name" class="block text-xs font-semibold uppercase tracking-wider text-lavender mb-1.5">Seu Nome</label>
+                    <input type="text" id="lead-name" required placeholder="Ex.: Maria Clara" class="w-full px-4 py-3.5 rounded-xl bg-obsidian/80 border border-white/15 focus:border-energy focus:outline-none text-sm text-white placeholder-lavender/40 transition-colors">
+                </div>
+
+                <div>
+                    <label for="lead-phone" class="block text-xs font-semibold uppercase tracking-wider text-lavender mb-1.5">Seu WhatsApp</label>
+                    <input type="tel" id="lead-phone" required placeholder="(19) 99999-9999" class="w-full px-4 py-3.5 rounded-xl bg-obsidian/80 border border-white/15 focus:border-energy focus:outline-none text-sm text-white placeholder-lavender/40 transition-colors">
+                </div>
+
+                <div>
+                    <label for="lead-modality" class="block text-xs font-semibold uppercase tracking-wider text-lavender mb-1.5">Interesse / Modalidade</label>
+                    <select id="lead-modality" class="w-full px-4 py-3.5 rounded-xl bg-obsidian/95 border border-white/15 focus:border-energy focus:outline-none text-sm text-white transition-colors">
+                        <option value="Aula Experimental Gratuita">Aula Experimental Gratuita</option>
+                        <option value="Musculação">Musculação</option>
+                        <option value="Jump">Jump</option>
+                        <option value="Ritbox">Ritbox</option>
+                        <option value="Funcional">Funcional</option>
+                        <option value="Ritmos">Ritmos</option>
+                        <option value="Avaliação Física Completa">Avaliação Física Completa</option>
+                        <option value="Matrícula - Plano Mensal">Matrícula - Plano Mensal</option>
+                        <option value="Matrícula - Plano Semestral">Matrícula - Plano Semestral</option>
+                        <option value="Matrícula - Plano Anual (Mais Escolhido)">Matrícula - Plano Anual (Mais Escolhido)</option>
+                    </select>
+                </div>
+
+                <!-- Mensagem de feedback inline -->
+                <div id="booking-feedback" class="hidden p-3.5 rounded-xl bg-energy/15 border border-energy/40 text-xs text-energy font-medium"></div>
+
+                <button type="submit" class="w-full py-4 rounded-xl bg-energy hover:bg-gold text-obsidian font-display font-black uppercase tracking-wider text-sm flex items-center justify-center gap-2 btn-energy shadow-glow-yellow cursor-pointer mt-2">
+                    <i data-lucide="send" class="w-4 h-4"></i>
+                    <span>Confirmar no WhatsApp</span>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- =========================================================
+         JAVASCRIPT — INTERATIVIDADE, ANIMAÇÕES & FILTROS
+    ========================================================= -->
+    <script>
+        // Número de WhatsApp da Body Action (editável pelo Studio Factory)
+        let WHATSAPP_NUMBER = '5519999999999';
+
+        // Dados da Grade de Horários (RF03)
+        const scheduleData = [
+            { modality: 'Jump', days: 'Seg / Qua / Sex', time: '06:15 e 07:15', intensity: 'Alta Energia', color: 'magenta' },
+            { modality: 'Ritbox', days: 'Seg / Qua', time: '08:00 e 19:00', intensity: 'Treino Ritmado', color: 'electric' },
+            { modality: 'Funcional', days: 'Ter / Qui', time: '07:00 e 18:30', intensity: 'Força & Agilidade', color: 'energy' },
+            { modality: 'Ritmos', days: 'Ter / Qui', time: '19:30', intensity: 'Dança & Cardio', color: 'magenta' },
+            { modality: 'Jump', days: 'Seg / Qua', time: '18:15', intensity: 'Queima Calórica', color: 'magenta' },
+            { modality: 'Ritbox', days: 'Sex', time: '18:30', intensity: 'Sextou de Energia', color: 'electric' },
+            { modality: 'Funcional', days: 'Sábado', time: '09:00', intensity: 'Aulão Especial', color: 'energy' },
+            { modality: 'Ritmos', days: 'Sábado', time: '10:15', intensity: 'Energia Coletiva', color: 'magenta' },
+        ];
+
+        /**
+         * Renderiza os cards da grade de horários filtrados por modalidade
+         */
+        function renderSchedule(filter = 'Todas') {
+            const container = document.getElementById('schedule-grid');
+            if (!container) return;
+
+            const filtered = filter === 'Todas'
+                ? scheduleData
+                : scheduleData.filter(item => item.modality === filter);
+
+            container.innerHTML = filtered.map(item => {
+                const badgeClass = item.color === 'magenta'
+                    ? 'bg-magenta/20 text-pink-300 border-magenta/40'
+                    : item.color === 'electric'
+                        ? 'bg-electric/25 text-purple-200 border-electric/50'
+                        : 'bg-energy/15 text-energy border-energy/40';
+
+                return `
+                    <div class="glass-card rounded-2xl p-5 flex flex-col justify-between hover:-translate-y-1 transition-all">
+                        <div>
+                            <div class="flex items-center justify-between gap-2 mb-3">
+                                <span class="px-2.5 py-1 rounded-lg text-[10px] font-display font-bold uppercase tracking-wider border ${badgeClass}">
+                                    ${item.modality}
+                                </span>
+                                <span class="text-[11px] text-lavender font-medium">${item.days}</span>
+                            </div>
+                            <div class="font-display font-black text-xl text-white mb-1">${item.time}</div>
+                            <p class="text-xs text-lavender">${item.intensity}</p>
+                        </div>
+                        <button onclick="openBookingModal('${item.modality} (${item.days} - ${item.time})')" class="mt-5 w-full py-2.5 rounded-xl bg-white/5 hover:bg-energy hover:text-obsidian text-white font-display font-bold text-[11px] uppercase tracking-wider transition-colors cursor-pointer">
+                            Reservar Vaga
+                        </button>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        /**
+         * Alterna o filtro ativo na grade de horários (RF03)
+         */
+        function filterSchedule(modality) {
+            renderSchedule(modality);
+
+            document.querySelectorAll('.schedule-filter-btn').forEach(btn => {
+                const isSelected = btn.getAttribute('data-filter') === modality;
+                if (isSelected) {
+                    btn.className = 'schedule-filter-btn active px-4 py-2.5 rounded-xl font-display font-bold text-xs uppercase tracking-wider bg-energy text-obsidian transition-all cursor-pointer';
+                } else {
+                    btn.className = 'schedule-filter-btn px-4 py-2.5 rounded-xl font-display font-bold text-xs uppercase tracking-wider bg-white/5 text-lavender hover:text-white border border-white/10 transition-all cursor-pointer';
+                }
+            });
+        }
+
+        /**
+         * Abre o modal de agendamento com a modalidade pré-selecionada (RF01)
+         */
+        function openBookingModal(presetModality = 'Aula Experimental Gratuita') {
+            const modal = document.getElementById('booking-modal');
+            const card = document.getElementById('booking-modal-card');
+            const select = document.getElementById('lead-modality');
+            const feedback = document.getElementById('booking-feedback');
+
+            feedback.classList.add('hidden');
+
+            // Adiciona opção dinâmica se não existir no select
+            let optionExists = Array.from(select.options).some(opt => opt.value === presetModality);
+            if (!optionExists) {
+                const newOpt = new Option(presetModality, presetModality, true, true);
+                select.add(newOpt);
+            } else {
+                select.value = presetModality;
+            }
+
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            requestAnimationFrame(() => {
+                modal.classList.remove('opacity-0');
+                card.classList.remove('scale-95');
+                card.classList.add('scale-100');
+            });
+            document.body.style.overflow = 'hidden';
+        }
+
+        /**
+         * Fecha o modal de agendamento
+         */
+        function closeBookingModal() {
+            const modal = document.getElementById('booking-modal');
+            const card = document.getElementById('booking-modal-card');
+
+            modal.classList.add('opacity-0');
+            card.classList.remove('scale-100');
+            card.classList.add('scale-95');
+
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+                document.body.style.overflow = '';
+            }, 250);
+        }
+
+        /**
+         * Menu Mobile Drawer (RF04)
+         */
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const closeDrawerBtn = document.getElementById('close-drawer-btn');
+        const mobileDrawer = document.getElementById('mobile-drawer');
+
+        function openMobileDrawer() {
+            mobileDrawer.classList.remove('hidden');
+            mobileDrawer.classList.add('flex');
+            requestAnimationFrame(() => {
+                mobileDrawer.classList.remove('opacity-0');
+            });
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeMobileDrawer() {
+            mobileDrawer.classList.add('opacity-0');
+            setTimeout(() => {
+                mobileDrawer.classList.add('hidden');
+                mobileDrawer.classList.remove('flex');
+                document.body.style.overflow = '';
+            }, 250);
+        }
+
+        mobileMenuBtn?.addEventListener('click', openMobileDrawer);
+        closeDrawerBtn?.addEventListener('click', closeMobileDrawer);
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', closeMobileDrawer);
+        });
+
+        /**
+         * Submissão do formulário -> Redirecionamento WhatsApp formatado
+         */
+        document.getElementById('booking-form')?.addEventListener('submit', function(e) {
+            e.preventDefault();
+            try {
+                const name = document.getElementById('lead-name').value.trim();
+                const phone = document.getElementById('lead-phone').value.trim();
+                const modality = document.getElementById('lead-modality').value;
+                const feedback = document.getElementById('booking-feedback');
+
+                if (!name || !phone) {
+                    feedback.textContent = 'Por favor, informe seu nome e WhatsApp para continuar.';
+                    feedback.classList.remove('hidden');
+                    return;
+                }
+
+                const message = `Olá, Body Action Academia! 💪✨ Me chamo *${name}* (${phone}) e tenho interesse em: *${modality}*. Gostaria de agendar minha experiência!`;
+                const waUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+
+                feedback.textContent = 'Tudo certo! Abrindo seu WhatsApp com a mensagem pronta...';
+                feedback.classList.remove('hidden');
+
+                setTimeout(() => {
+                    window.open(waUrl, '_blank', 'noopener,noreferrer');
+                    closeBookingModal();
+                    this.reset();
+                }, 700);
+            } catch (err) {
+                console.error('Erro ao iniciar WhatsApp:', err);
+            }
+        });
+
+        /**
+         * Fecha modal ao clicar fora ou pressionar ESC
+         */
+        document.getElementById('booking-modal')?.addEventListener('click', function(e) {
+            if (e.target === this) closeBookingModal();
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeBookingModal();
+                closeMobileDrawer();
+            }
+        });
+
+        /**
+         * Header com efeito glassmorphism ao rolar + Parallax sutil no Hero
+         */
+        const header = document.getElementById('main-header');
+        const heroBg = document.getElementById('hero-bg');
+
+        // Carrossel sutil de fotos do Hero (com controles do layout de referência)
+        const heroSlides = [
+            'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=2000&q=80',
+            'https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=2000&q=80',
+            'https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=2000&q=80'
+        ];
+        let currentHeroSlide = 0;
+        let heroAutoplay = true;
+        let heroSlideTimer = null;
+
+        function setHeroSlide(index) {
+            currentHeroSlide = index % heroSlides.length;
+            const img = document.getElementById('hero-slide-img');
+            if (img) {
+                img.style.opacity = '0.35';
+                setTimeout(() => {
+                    img.src = heroSlides[currentHeroSlide];
+                    img.style.opacity = '0.90';
+                }, 220);
+            }
+            document.querySelectorAll('.hero-dot').forEach((dot, i) => {
+                if (i === currentHeroSlide) {
+                    dot.className = 'hero-dot w-8 h-1 rounded-full bg-energy transition-all cursor-pointer';
+                } else {
+                    dot.className = 'hero-dot w-5 h-1 rounded-full bg-white/25 hover:bg-white/50 transition-all cursor-pointer';
+                }
+            });
+        }
+
+        function toggleHeroAutoplay() {
+            heroAutoplay = !heroAutoplay;
+            const btn = document.getElementById('hero-slide-toggle');
+            if (btn) {
+                btn.innerHTML = heroAutoplay
+                    ? '<i data-lucide="pause" class="w-3 h-3"></i>'
+                    : '<i data-lucide="play" class="w-3 h-3"></i>';
+                if (window.lucide) lucide.createIcons();
+            }
+        }
+
+        function startHeroAutoplay() {
+            clearInterval(heroSlideTimer);
+            heroSlideTimer = setInterval(() => {
+                if (heroAutoplay && !document.body.classList.contains('sf-active-mode')) {
+                    setHeroSlide((currentHeroSlide + 1) % heroSlides.length);
+                }
+            }, 6500);
+        }
+
+        // Atualiza os 2 cards flutuantes do Hero com base no horário atual
+        function updateHeroLiveCards() {
+            const now = new Date();
+            const day = now.getDay(); // 0 = Dom, 6 = Sáb
+            const hour = now.getHours() + now.getMinutes() / 60;
+
+            const statusLabel = document.getElementById('hero-status-label');
+            const statusSub = document.getElementById('hero-status-sub');
+            const statusHour = document.getElementById('hero-status-hour');
+            const statusBar = document.getElementById('hero-status-bar');
+            const statusDot = document.getElementById('hero-status-dot');
+
+            const isWeekday = day >= 1 && day <= 5;
+            const isSat = day === 6;
+
+            if (isWeekday && hour >= 6 && hour < 22) {
+                if (statusLabel) statusLabel.textContent = 'Aberto agora';
+                if (statusSub) statusSub.textContent = 'FECHA HOJE ÀS';
+                if (statusHour) statusHour.textContent = '22h';
+                const pct = Math.min(100, Math.max(8, ((hour - 6) / 16) * 100));
+                if (statusBar) statusBar.style.width = `${pct}%`;
+            } else if (isSat && hour >= 8 && hour < 13) {
+                if (statusLabel) statusLabel.textContent = 'Aberto agora';
+                if (statusSub) statusSub.textContent = 'SÁBADO • FECHA ÀS';
+                if (statusHour) statusHour.textContent = '13h';
+                const pct = Math.min(100, Math.max(8, ((hour - 8) / 5) * 100));
+                if (statusBar) statusBar.style.width = `${pct}%`;
+            } else {
+                if (statusLabel) statusLabel.textContent = 'Fechado';
+                if (statusSub) statusSub.textContent = day === 5 && hour >= 22 ? 'ABRE AMANHÃ ÀS' : 'ABRE ÀS';
+                if (statusHour) statusHour.textContent = (day === 5 && hour >= 22) || (isSat && hour < 8) ? '08h' : '06h';
+                if (statusBar) statusBar.style.width = '14%';
+                if (statusDot) statusDot.className = 'w-2 h-2 rounded-full bg-lavender/50';
+            }
+        }
+
+        window.addEventListener('scroll', () => {
+            const scrollY = window.scrollY;
+            if (scrollY > 40) {
+                header.classList.add('header-scrolled');
+                header.classList.remove('py-4');
+                header.classList.add('py-3');
+            } else {
+                header.classList.remove('header-scrolled');
+                header.classList.remove('py-3');
+                header.classList.add('py-4');
+            }
+
+            // Parallax sutil apenas quando hero está visível
+            if (heroBg && scrollY < window.innerHeight) {
+                heroBg.style.transform = `scale(1.03) translateY(${scrollY * 0.12}px)`;
+            }
+        }, { passive: true });
+
+        /**
+         * Animação de Contadores (KPIs) & Scroll Reveal via IntersectionObserver
+         */
+        function animateCounters() {
+            const counters = document.querySelectorAll('.counter');
+            counters.forEach(counter => {
+                if (counter.dataset.animated) return;
+                counter.dataset.animated = 'true';
+
+                const target = +counter.getAttribute('data-target');
+                const duration = 1400;
+                const startTime = performance.now();
+
+                function update(currentTime) {
+                    const elapsed = currentTime - startTime;
+                    const progress = Math.min(elapsed / duration, 1);
+                    // Ease-out cubic
+                    const eased = 1 - Math.pow(1 - progress, 3);
+                    counter.textContent = Math.floor(eased * target);
+
+                    if (progress < 1) {
+                        requestAnimationFrame(update);
+                    } else {
+                        counter.textContent = target;
+                    }
+                }
+                requestAnimationFrame(update);
+            });
+        }
+
+        // Inicialização ao carregar o DOM
+        document.addEventListener('DOMContentLoaded', () => {
+            // Inicializa ícones Lucide
+            if (window.lucide) {
+                lucide.createIcons();
+            }
+
+            // Atualiza ano no rodapé
+            const yearEl = document.getElementById('current-year');
+            if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+            // Renderiza grade inicial
+            renderSchedule('Todas');
+
+            // Atualiza cards flutuantes e inicia rotação sutil de fotos do Hero
+            updateHeroLiveCards();
+            startHeroAutoplay();
+
+            // Observer para Scroll Reveal
+            const revealObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        if (entry.target.querySelector('.counter')) {
+                            animateCounters();
+                        }
+                        revealObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.12 });
+
+            document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+        });
+    </script>
+
+    <!-- =========================================================
+         STUDIO FACTORY — INTERFACE & MOTOR VISUAL (REMOVIDO NO SITE FINAL)
+    ========================================================= -->
+    <button id="sf-launcher" data-studio-factory="true" type="button" title="Abrir Editor Visual Studio Factory">
+        <span class="sf-dot"></span>
+        <span>Studio Factory</span>
+    </button>
+
+    <!-- Barra Superior de Controle -->
+    <div id="sf-toolbar" data-studio-factory="true">
+        <div style="display:flex;align-items:center;gap:10px;overflow-x:auto;">
+            <div style="display:flex;align-items:center;gap:8px;padding-right:8px;border-right:1px solid rgba(255,255,255,0.12);">
+                <span style="width:10px;height:10px;border-radius:99px;background:#FFD600;box-shadow:0 0 10px #FFD600;"></span>
+                <span style="font-family:'Montserrat',sans-serif;font-weight:900;font-size:12px;letter-spacing:0.06em;">STUDIO <span style="color:#FFD600;font-style:italic;">FACTORY</span></span>
+            </div>
+
+            <button id="sf-mode-select" class="sf-btn sf-btn-active" type="button" title="Clique para selecionar e editar">
+                ↖ Selecionar
+            </button>
+            <button id="sf-mode-drag" class="sf-btn" type="button" title="Clique e arraste qualquer elemento livremente">
+                ✥ Arrastar Livre
+            </button>
+            <button id="sf-undo-btn" class="sf-btn" type="button" title="Desfazer (Ctrl+Z)">
+                ↶ Desfazer
+            </button>
+            <button id="sf-redo-btn" class="sf-btn" type="button" title="Refazer (Ctrl+Y)">
+                ↷ Refazer
+            </button>
+            <button id="sf-global-btn" class="sf-btn" type="button" title="Configurar WhatsApp Global">
+                ⚙ WhatsApp
+            </button>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;overflow-x:auto;">
+            <button id="sf-toggle-inspector" class="sf-btn" type="button" title="Mostrar/Ocultar Inspetor">
+                ◧ Painel
+            </button>
+            <button id="sf-export-studio-btn" class="sf-btn sf-btn-purple" type="button" title="Baixar HTML com o Studio Factory incluso para continuar editando depois">
+                ⬇ Exportar c/ Studio
+            </button>
+            <button id="sf-export-final-btn" class="sf-btn sf-btn-primary" type="button" title="Baixar HTML limpo de produção sem o Studio Factory">
+                🚀 Exportar Site Final
+            </button>
+            <button id="sf-close-btn" class="sf-btn sf-btn-danger" type="button" title="Fechar Studio e visualizar o site">
+                ✕ Sair
+            </button>
+        </div>
+    </div>
+
+    <!-- Barra Rápida Flutuante sobre o Elemento Selecionado -->
+    <div id="sf-quick-bar" data-studio-factory="true">
+        <span id="sf-quick-tag" style="font-size:10px;font-weight:800;color:#FFD600;padding:0 6px;text-transform:uppercase;">TAG</span>
+        <button id="sf-quick-drag" type="button" title="Segure e arraste para mover">✥ Mover</button>
+        <button id="sf-quick-parent" type="button" title="Selecionar caixa pai">↑ Pai</button>
+        <button id="sf-quick-dup" type="button" title="Duplicar elemento">⧉</button>
+        <button id="sf-quick-del" type="button" title="Excluir elemento" style="color:#FF80AB;">🗑</button>
+    </div>
+
+    <!-- Painel Inspetor Completo -->
+    <aside id="sf-inspector" data-studio-factory="true">
+        <!-- Cabeçalho do Inspetor -->
+        <div style="padding:12px 14px;border-bottom:1px solid rgba(255,255,255,0.1);display:flex;align-items:center;justify-content:space-between;background:rgba(74,14,110,0.3);">
+            <div>
+                <div style="font-size:10px;text-transform:uppercase;letter-spacing:0.12em;color:#FFD600;font-weight:800;">Inspetor de Elemento</div>
+                <div id="sf-selected-info" style="font-size:12px;color:#FFFFFF;font-weight:600;margin-top:2px;">Clique em algo no site</div>
+            </div>
+            <button id="sf-select-parent-btn" class="sf-btn" type="button" title="Subir para o elemento pai">↑ Pai</button>
+        </div>
+
+        <!-- Abas do Inspetor -->
+        <div style="display:flex;border-bottom:1px solid rgba(255,255,255,0.1);background:rgba(11,7,16,0.6);">
+            <button class="sf-tab-btn sf-tab-active" data-sf-tab="texto" type="button">Texto</button>
+            <button class="sf-tab-btn" data-sf-tab="caixa" type="button">Caixa</button>
+            <button class="sf-tab-btn" data-sf-tab="layout" type="button">Posição</button>
+            <button class="sf-tab-btn" data-sf-tab="midia" type="button">Foto/Link</button>
+            <button class="sf-tab-btn" data-sf-tab="inserir" type="button">+ Novo</button>
+        </div>
+
+        <!-- Conteúdo das Abas -->
+        <div class="sf-inspector-body">
+            <!-- ABA 1: TEXTO -->
+            <div class="sf-tab-panel" data-sf-panel="texto" style="display:flex;flex-direction:column;gap:12px;">
+                <div>
+                    <div class="sf-field-label">
+                        <span>Conteúdo do Texto</span>
+                        <button id="sf-inline-edit-btn" class="sf-btn" style="padding:3px 7px;font-size:10px;" type="button">✎ Editar na Tela</button>
+                    </div>
+                    <textarea id="sf-text-content" class="sf-textarea" rows="3" placeholder="Selecione um texto para editar..."></textarea>
+                </div>
+
+                <div>
+                    <div class="sf-field-label"><span>Cor do Texto</span><span id="sf-text-color-hex">#FFFFFF</span></div>
+                    <div style="display:flex;gap:8px;align-items:center;">
+                        <input id="sf-text-color" type="color" value="#ffffff" style="width:42px;height:34px;border:none;border-radius:8px;background:transparent;cursor:pointer;">
+                        <div style="display:flex;gap:5px;flex-wrap:wrap;">
+                            <button type="button" class="sf-swatch" data-color-target="color" data-color="#FFFFFF" style="background:#FFFFFF;" title="Branco"></button>
+                            <button type="button" class="sf-swatch" data-color-target="color" data-color="#FFD600" style="background:#FFD600;" title="Amarelo Energia"></button>
+                            <button type="button" class="sf-swatch" data-color-target="color" data-color="#C4B9D1" style="background:#C4B9D1;" title="Lavanda"></button>
+                            <button type="button" class="sf-swatch" data-color-target="color" data-color="#0B0710" style="background:#0B0710;" title="Preto Obsidiana"></button>
+                            <button type="button" class="sf-swatch" data-color-target="color" data-color="#8E24AA" style="background:#8E24AA;" title="Roxo Elétrico"></button>
+                            <button type="button" class="sf-swatch" data-color-target="color" data-color="#D81B60" style="background:#D81B60;" title="Magenta"></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+                    <div>
+                        <div class="sf-field-label"><span>Tamanho (px)</span><span id="sf-font-size-val">--</span></div>
+                        <input id="sf-font-size" class="sf-range" type="range" min="10" max="120" value="16">
+                    </div>
+                    <div>
+                        <div class="sf-field-label"><span>Peso</span></div>
+                        <select id="sf-font-weight" class="sf-select">
+                            <option value="">Padrão</option>
+                            <option value="300">Leve (300)</option>
+                            <option value="400">Normal (400)</option>
+                            <option value="600">Semibold (600)</option>
+                            <option value="700">Negrito (700)</option>
+                            <option value="800">ExtraBold (800)</option>
+                            <option value="900">Black (900)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+                    <div>
+                        <div class="sf-field-label"><span>Fonte</span></div>
+                        <select id="sf-font-family" class="sf-select">
+                            <option value="">Padrão</option>
+                            <option value="'Montserrat', sans-serif">Montserrat</option>
+                            <option value="'Inter', sans-serif">Inter</option>
+                            <option value="Georgia, serif">Serif Editorial</option>
+                            <option value="monospace">Monospace</option>
+                        </select>
+                    </div>
+                    <div>
+                        <div class="sf-field-label"><span>Alinhamento</span></div>
+                        <select id="sf-text-align" class="sf-select">
+                            <option value="">Padrão</option>
+                            <option value="left">Esquerda</option>
+                            <option value="center">Centro</option>
+                            <option value="right">Direita</option>
+                            <option value="justify">Justificado</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div style="display:flex;gap:6px;">
+                    <button id="sf-toggle-italic" class="sf-btn" style="flex:1;justify-content:center;" type="button"><i>Itálico</i></button>
+                    <button id="sf-toggle-upper" class="sf-btn" style="flex:1;justify-content:center;" type="button">MAIÚSC.</button>
+                    <button id="sf-toggle-underline" class="sf-btn" style="flex:1;justify-content:center;" type="button"><u>Sublin.</u></button>
+                </div>
+            </div>
+
+            <!-- ABA 2: CAIXA & ESTILO -->
+            <div class="sf-tab-panel" data-sf-panel="caixa" style="display:none;flex-direction:column;gap:12px;">
+                <div>
+                    <div class="sf-field-label">
+                        <span>Cor de Fundo</span>
+                        <button id="sf-bg-transparent" class="sf-btn" style="padding:2px 6px;font-size:9px;" type="button">Transparente</button>
+                    </div>
+                    <div style="display:flex;gap:8px;align-items:center;">
+                        <input id="sf-bg-color" type="color" value="#170c24" style="width:42px;height:34px;border:none;border-radius:8px;background:transparent;cursor:pointer;">
+                        <div style="display:flex;gap:5px;flex-wrap:wrap;">
+                            <button type="button" class="sf-swatch" data-color-target="backgroundColor" data-color="#0B0710" style="background:#0B0710;"></button>
+                            <button type="button" class="sf-swatch" data-color-target="backgroundColor" data-color="#170C24" style="background:#170C24;"></button>
+                            <button type="button" class="sf-swatch" data-color-target="backgroundColor" data-color="#4A0E6E" style="background:#4A0E6E;"></button>
+                            <button type="button" class="sf-swatch" data-color-target="backgroundColor" data-color="#8E24AA" style="background:#8E24AA;"></button>
+                            <button type="button" class="sf-swatch" data-color-target="backgroundColor" data-color="#D81B60" style="background:#D81B60;"></button>
+                            <button type="button" class="sf-swatch" data-color-target="backgroundColor" data-color="#FFD600" style="background:#FFD600;"></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="sf-field-label"><span>Opacidade</span><span id="sf-opacity-val">100%</span></div>
+                    <input id="sf-opacity" class="sf-range" type="range" min="0" max="100" value="100">
+                </div>
+
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+                    <div>
+                        <div class="sf-field-label"><span>Borda (px)</span><span id="sf-border-width-val">0</span></div>
+                        <input id="sf-border-width" class="sf-range" type="range" min="0" max="12" value="0">
+                    </div>
+                    <div>
+                        <div class="sf-field-label"><span>Cor Borda</span></div>
+                        <input id="sf-border-color" type="color" value="#ffd600" style="width:100%;height:30px;border:none;border-radius:8px;background:transparent;cursor:pointer;">
+                    </div>
+                </div>
+
+                <div>
+                    <div class="sf-field-label"><span>Arredondamento (px)</span><span id="sf-radius-val">--</span></div>
+                    <input id="sf-radius" class="sf-range" type="range" min="0" max="80" value="16">
+                </div>
+
+                <div>
+                    <div class="sf-field-label"><span>Espaçamento Interno / Padding (px)</span><span id="sf-padding-val">--</span></div>
+                    <input id="sf-padding" class="sf-range" type="range" min="0" max="80" value="16">
+                </div>
+            </div>
+
+            <!-- ABA 3: POSIÇÃO & TAMANHO -->
+            <div class="sf-tab-panel" data-sf-panel="layout" style="display:none;flex-direction:column;gap:12px;">
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+                    <div>
+                        <div class="sf-field-label"><span>Posição X (px)</span><span id="sf-pos-x-val">0</span></div>
+                        <input id="sf-pos-x" class="sf-range" type="range" min="-400" max="400" value="0">
+                    </div>
+                    <div>
+                        <div class="sf-field-label"><span>Posição Y (px)</span><span id="sf-pos-y-val">0</span></div>
+                        <input id="sf-pos-y" class="sf-range" type="range" min="-400" max="400" value="0">
+                    </div>
+                </div>
+
+                <div>
+                    <div class="sf-field-label"><span>Escala / Zoom</span><span id="sf-scale-val">100%</span></div>
+                    <input id="sf-scale" class="sf-range" type="range" min="40" max="200" value="100">
+                </div>
+
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+                    <div>
+                        <div class="sf-field-label"><span>Largura (ex: 300px, 100%)</span></div>
+                        <input id="sf-width" class="sf-input" type="text" placeholder="auto">
+                    </div>
+                    <div>
+                        <div class="sf-field-label"><span>Altura (ex: 200px)</span></div>
+                        <input id="sf-height" class="sf-input" type="text" placeholder="auto">
+                    </div>
+                </div>
+
+                <div>
+                    <div class="sf-field-label"><span>Camada (Z-Index)</span><span id="sf-zindex-val">auto</span></div>
+                    <input id="sf-zindex" class="sf-range" type="range" min="0" max="50" value="1">
+                </div>
+
+                <button id="sf-reset-transform" class="sf-btn" style="justify-content:center;" type="button">↺ Resetar Posição & Escala</button>
+            </div>
+
+            <!-- ABA 4: FOTO & LINK -->
+            <div class="sf-tab-panel" data-sf-panel="midia" style="display:none;flex-direction:column;gap:12px;">
+                <div id="sf-img-finder-box" style="display:none;padding:10px;border-radius:12px;background:rgba(255,214,0,0.1);border:1px solid rgba(255,214,0,0.35);">
+                    <div style="font-size:11px;color:#FFD600;font-weight:700;margin-bottom:6px;">Foto detectada neste bloco!</div>
+                    <button id="sf-select-nearby-img" class="sf-btn sf-btn-primary" style="width:100%;justify-content:center;" type="button">📷 Selecionar Foto deste Bloco</button>
+                </div>
+
+                <div>
+                    <div class="sf-field-label"><span>URL da Imagem / Foto</span></div>
+                    <input id="sf-img-url" class="sf-input" type="text" placeholder="https://...">
+                </div>
+
+                <div>
+                    <div class="sf-field-label"><span>Ou Enviar Foto do Computador</span></div>
+                    <input id="sf-img-upload" type="file" accept="image/*" class="sf-input" style="padding:6px;">
+                </div>
+
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+                    <div>
+                        <div class="sf-field-label"><span>Enquadramento</span></div>
+                        <select id="sf-img-fit" class="sf-select">
+                            <option value="cover">Preencher (Cover)</option>
+                            <option value="contain">Conter (Contain)</option>
+                            <option value="fill">Esticar (Fill)</option>
+                        </select>
+                    </div>
+                    <div>
+                        <div class="sf-field-label"><span>Foco da Foto</span></div>
+                        <select id="sf-img-pos" class="sf-select">
+                            <option value="center">Centro</option>
+                            <option value="top">Topo</option>
+                            <option value="bottom">Base</option>
+                            <option value="left">Esquerda</option>
+                            <option value="right">Direita</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div style="border-top:1px solid rgba(255,255,255,0.1);padding-top:10px;">
+                    <div class="sf-field-label"><span>Link (href) — Para Links & Botões</span></div>
+                    <input id="sf-link-href" class="sf-input" type="text" placeholder="https://... ou #secao">
+                </div>
+            </div>
+
+            <!-- ABA 5: INSERIR NOVOS ELEMENTOS -->
+            <div class="sf-tab-panel" data-sf-panel="inserir" style="display:none;flex-direction:column;gap:10px;">
+                <p style="font-size:11px;color:#C4B9D1;line-height:1.4;">
+                    Os novos elementos serão inseridos dentro do bloco selecionado atualmente (ou no topo da seção).
+                </p>
+                <button class="sf-btn sf-btn-purple" style="justify-content:center;padding:10px;" type="button" onclick="window.StudioFactory.insertElement('heading')">+ Adicionar Título Cinematográfico</button>
+                <button class="sf-btn sf-btn-purple" style="justify-content:center;padding:10px;" type="button" onclick="window.StudioFactory.insertElement('text')">+ Adicionar Caixa de Texto</button>
+                <button class="sf-btn sf-btn-primary" style="justify-content:center;padding:10px;" type="button" onclick="window.StudioFactory.insertElement('button')">+ Adicionar Botão Amarelo</button>
+                <button class="sf-btn" style="justify-content:center;padding:10px;" type="button" onclick="window.StudioFactory.insertElement('badge')">+ Adicionar Selo / Badge</button>
+                <button class="sf-btn" style="justify-content:center;padding:10px;" type="button" onclick="window.StudioFactory.insertElement('image')">+ Adicionar Nova Foto</button>
+            </div>
+        </div>
+
+        <!-- Rodapé de Ações do Elemento -->
+        <div style="padding:10px 14px;border-top:1px solid rgba(255,255,255,0.1);background:rgba(11,7,16,0.8);display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;">
+            <button id="sf-dup-btn" class="sf-btn" style="justify-content:center;" type="button">⧉ Duplicar</button>
+            <button id="sf-hide-btn" class="sf-btn" style="justify-content:center;" type="button">👁 Ocultar</button>
+            <button id="sf-del-btn" class="sf-btn sf-btn-danger" style="justify-content:center;" type="button">🗑 Excluir</button>
+        </div>
+    </aside>
+
+    <!-- Modal Auxiliar (WhatsApp Global / Cópia de Código) -->
+    <div id="sf-modal" data-studio-factory="true">
+        <div style="width:100%;max-width:460px;background:#170C24;border:1px solid rgba(255,214,0,0.4);border-radius:20px;padding:24px;box-shadow:0 24px 60px rgba(0,0,0,0.8);font-family:'Inter',sans-serif;">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;">
+                <h3 id="sf-modal-title" style="font-family:'Montserrat',sans-serif;font-weight:900;font-size:16px;text-transform:uppercase;color:#FFD600;">Configurações</h3>
+                <button id="sf-modal-close" class="sf-btn" type="button">✕</button>
+            </div>
+            <div id="sf-modal-content"></div>
+        </div>
+    </div>
+
+    <!-- Toast de Notificações -->
+    <div id="sf-toast" data-studio-factory="true"></div>
+
+    <!-- Motor JavaScript do Studio Factory -->
+    <script data-studio-factory="true">
+        (function() {
+            const SF = {
+                active: false,
+                dragMode: false,
+                selected: null,
+                hovered: null,
+                nearbyImg: null,
+                history: [],
+                historyIndex: -1,
+                dragging: null,
+                lastExportHtml: '',
+            };
+
+            const els = {
+                launcher: document.getElementById('sf-launcher'),
+                toolbar: document.getElementById('sf-toolbar'),
+                inspector: document.getElementById('sf-inspector'),
+                quickBar: document.getElementById('sf-quick-bar'),
+                quickTag: document.getElementById('sf-quick-tag'),
+                selectedInfo: document.getElementById('sf-selected-info'),
+                toast: document.getElementById('sf-toast'),
+                modal: document.getElementById('sf-modal'),
+                modalTitle: document.getElementById('sf-modal-title'),
+                modalContent: document.getElementById('sf-modal-content'),
+            };
+
+            function showToast(msg) {
+                els.toast.textContent = msg;
+                els.toast.classList.add('sf-show');
+                clearTimeout(SF.toastTimer);
+                SF.toastTimer = setTimeout(() => els.toast.classList.remove('sf-show'), 2800);
+            }
+
+            function isStudioElement(node) {
+                return !node || !(node instanceof Element) || !!node.closest('[data-studio-factory="true"]');
+            }
+
+            // =====================================================
+            // HISTÓRICO (UNDO / REDO)
+            // =====================================================
+            function captureSnapshot() {
+                const header = document.querySelector('header');
+                const main = document.querySelector('main');
+                const footer = document.querySelector('footer');
+                return {
+                    header: header ? header.innerHTML : '',
+                    main: main ? main.innerHTML : '',
+                    footer: footer ? footer.innerHTML : '',
+                };
+            }
+
+            function saveState() {
+                // Limpa classes temporárias antes de salvar snapshot
+                const prevSelected = SF.selected;
+                if (prevSelected) prevSelected.classList.remove('sf-selected', 'sf-hover', 'sf-editing-text');
+                const snap = captureSnapshot();
+                if (prevSelected) prevSelected.classList.add('sf-selected');
+
+                SF.history = SF.history.slice(0, SF.historyIndex + 1);
+                SF.history.push(snap);
+                if (SF.history.length > 25) SF.history.shift();
+                SF.historyIndex = SF.history.length - 1;
+            }
+
+            function applySnapshot(snap) {
+                if (!snap) return;
+                clearSelection();
+                const header = document.querySelector('header');
+                const main = document.querySelector('main');
+                const footer = document.querySelector('footer');
+                if (header) header.innerHTML = snap.header;
+                if (main) main.innerHTML = snap.main;
+                if (footer) footer.innerHTML = snap.footer;
+                if (window.lucide) lucide.createIcons();
+            }
+
+            function undo() {
+                if (SF.historyIndex > 0) {
+                    SF.historyIndex--;
+                    applySnapshot(SF.history[SF.historyIndex]);
+                    showToast('Alteração desfeita');
+                } else {
+                    showToast('Nada para desfazer');
+                }
+            }
+
+            function redo() {
+                if (SF.historyIndex < SF.history.length - 1) {
+                    SF.historyIndex++;
+                    applySnapshot(SF.history[SF.historyIndex]);
+                    showToast('Alteração refeita');
+                } else {
+                    showToast('Nada para refazer');
+                }
+            }
+
+            // =====================================================
+            // ATIVAR / DESATIVAR STUDIO
+            // =====================================================
+            function openStudio() {
+                SF.active = true;
+                document.body.classList.add('sf-active-mode');
+                els.launcher.style.display = 'none';
+                els.toolbar.classList.add('sf-open');
+                els.inspector.classList.add('sf-open');
+                // Garante que todos os elementos reveal fiquem visíveis para edição
+                document.querySelectorAll('.reveal').forEach(r => r.classList.add('active'));
+                if (SF.history.length === 0) saveState();
+                showToast('Studio Factory ativado! Clique em qualquer elemento para editar.');
+            }
+
+            function closeStudio() {
+                SF.active = false;
+                SF.dragMode = false;
+                clearSelection();
+                document.body.classList.remove('sf-active-mode', 'sf-drag-cursor');
+                els.toolbar.classList.remove('sf-open');
+                els.inspector.classList.remove('sf-open');
+                els.launcher.style.display = 'inline-flex';
+                showToast('Modo visualização restaurado');
+            }
+
+            // =====================================================
+            // SELEÇÃO & SINCRONIZAÇÃO DO INSPETOR
+            // =====================================================
+            function rgbToHex(rgb) {
+                if (!rgb || rgb === 'transparent' || rgb === 'rgba(0, 0, 0, 0)') return '#170c24';
+                const match = rgb.match(/\d+/g);
+                if (!match || match.length < 3) return '#ffffff';
+                return '#' + match.slice(0, 3).map(x => parseInt(x, 10).toString(16).padStart(2, '0')).join('');
+            }
+
+            function clearSelection() {
+                if (SF.selected) {
+                    SF.selected.classList.remove('sf-selected', 'sf-editing-text');
+                    SF.selected.removeAttribute('contenteditable');
+                }
+                if (SF.hovered) SF.hovered.classList.remove('sf-hover');
+                SF.selected = null;
+                SF.hovered = null;
+                els.quickBar.style.display = 'none';
+                els.selectedInfo.textContent = 'Clique em algo no site';
+            }
+
+            function positionQuickBar() {
+                if (!SF.selected || !SF.active) {
+                    els.quickBar.style.display = 'none';
+                    return;
+                }
+                const rect = SF.selected.getBoundingClientRect();
+                const top = Math.max(62, rect.top - 38);
+                const left = Math.max(10, Math.min(window.innerWidth - 260, rect.left));
+                els.quickBar.style.top = top + 'px';
+                els.quickBar.style.left = left + 'px';
+                els.quickBar.style.display = 'flex';
+                els.quickTag.textContent = SF.selected.tagName.toLowerCase();
+            }
+
+            function selectElement(el) {
+                if (!el || isStudioElement(el) || el === document.body || el === document.documentElement) return;
+                clearSelection();
+                SF.selected = el;
+                el.classList.add('sf-selected');
+                positionQuickBar();
+                syncInspectorFromElement(el);
+            }
+
+            function syncInspectorFromElement(el) {
+                const cs = window.getComputedStyle(el);
+                const tag = el.tagName.toLowerCase();
+                els.selectedInfo.textContent = `<${tag}> ${el.id ? '#' + el.id : ''}`;
+
+                // Texto
+                document.getElementById('sf-text-content').value = el.innerText || '';
+                const textHex = rgbToHex(cs.color);
+                document.getElementById('sf-text-color').value = textHex;
+                document.getElementById('sf-text-color-hex').textContent = textHex.toUpperCase();
+
+                const fs = parseInt(cs.fontSize, 10) || 16;
+                document.getElementById('sf-font-size').value = Math.min(120, Math.max(10, fs));
+                document.getElementById('sf-font-size-val').textContent = fs + 'px';
+                document.getElementById('sf-font-weight').value = el.style.fontWeight || '';
+                document.getElementById('sf-text-align').value = el.style.textAlign || '';
+
+                // Caixa
+                const bgHex = rgbToHex(cs.backgroundColor);
+                document.getElementById('sf-bg-color').value = bgHex;
+                const op = Math.round((parseFloat(cs.opacity) || 1) * 100);
+                document.getElementById('sf-opacity').value = op;
+                document.getElementById('sf-opacity-val').textContent = op + '%';
+
+                const bw = parseInt(cs.borderWidth, 10) || 0;
+                document.getElementById('sf-border-width').value = Math.min(12, bw);
+                document.getElementById('sf-border-width-val').textContent = bw + 'px';
+
+                const rad = parseInt(cs.borderRadius, 10) || 0;
+                document.getElementById('sf-radius').value = Math.min(80, rad);
+                document.getElementById('sf-radius-val').textContent = rad + 'px';
+
+                const pad = parseInt(cs.paddingTop, 10) || 0;
+                document.getElementById('sf-padding').value = Math.min(80, pad);
+                document.getElementById('sf-padding-val').textContent = pad + 'px';
+
+                // Posição & Escala
+                const tx = parseFloat(el.dataset.sfTx || '0');
+                const ty = parseFloat(el.dataset.sfTy || '0');
+                const sc = parseFloat(el.dataset.sfScale || '100');
+                document.getElementById('sf-pos-x').value = tx;
+                document.getElementById('sf-pos-x-val').textContent = tx + 'px';
+                document.getElementById('sf-pos-y').value = ty;
+                document.getElementById('sf-pos-y-val').textContent = ty + 'px';
+                document.getElementById('sf-scale').value = sc;
+                document.getElementById('sf-scale-val').textContent = sc + '%';
+
+                document.getElementById('sf-width').value = el.style.width || '';
+                document.getElementById('sf-height').value = el.style.height || '';
+                document.getElementById('sf-zindex-val').textContent = el.style.zIndex || 'auto';
+
+                // Foto & Link
+                const imgFinderBox = document.getElementById('sf-img-finder-box');
+                if (tag === 'img') {
+                    imgFinderBox.style.display = 'none';
+                    SF.nearbyImg = el;
+                    document.getElementById('sf-img-url').value = el.getAttribute('src') || '';
+                    document.getElementById('sf-img-fit').value = el.style.objectFit || 'cover';
+                    document.getElementById('sf-img-pos').value = el.style.objectPosition || 'center';
+                } else {
+                    const foundImg = el.querySelector('img') || el.closest('article, section')?.querySelector('img');
+                    if (foundImg) {
+                        SF.nearbyImg = foundImg;
+                        imgFinderBox.style.display = 'block';
+                        document.getElementById('sf-img-url').value = foundImg.getAttribute('src') || '';
+                    } else {
+                        SF.nearbyImg = null;
+                        imgFinderBox.style.display = 'none';
+                        document.getElementById('sf-img-url').value = '';
+                    }
+                }
+
+                const linkEl = tag === 'a' ? el : el.closest('a');
+                document.getElementById('sf-link-href').value = linkEl ? (linkEl.getAttribute('href') || '') : '';
+            }
+
+            function applyTransform(el) {
+                if (!el) return;
+                const tx = parseFloat(el.dataset.sfTx || '0');
+                const ty = parseFloat(el.dataset.sfTy || '0');
+                const sc = parseFloat(el.dataset.sfScale || '100') / 100;
+                el.style.transform = `translate(${tx}px, ${ty}px) scale(${sc})`;
+                positionQuickBar();
+            }
+
+            // =====================================================
+            // EVENTOS NO CANVAS (HOVER, CLICK, DOUBLE-CLICK, DRAG)
+            // =====================================================
+            document.addEventListener('mouseover', (e) => {
+                if (!SF.active || isStudioElement(e.target)) return;
+                if (SF.hovered && SF.hovered !== SF.selected) SF.hovered.classList.remove('sf-hover');
+                SF.hovered = e.target;
+                if (SF.hovered !== SF.selected) SF.hovered.classList.add('sf-hover');
+            }, true);
+
+            document.addEventListener('click', (e) => {
+                if (!SF.active || isStudioElement(e.target)) return;
+                if (SF.selected && SF.selected.isContentEditable && SF.selected.contains(e.target)) return;
+                e.preventDefault();
+                e.stopPropagation();
+                selectElement(e.target);
+            }, true);
+
+            document.addEventListener('dblclick', (e) => {
+                if (!SF.active || isStudioElement(e.target)) return;
+                e.preventDefault();
+                e.stopPropagation();
+                selectElement(e.target);
+                enableInlineTextEdit();
+            }, true);
+
+            function enableInlineTextEdit() {
+                if (!SF.selected) return;
+                SF.selected.setAttribute('contenteditable', 'true');
+                SF.selected.classList.add('sf-editing-text');
+                SF.selected.focus();
+                showToast('Editando texto direto na tela (clique fora para finalizar)');
+            }
+
+            // Arrastar Livre (via modo Arrastar ou botão ✥ Mover)
+            function startDrag(e, targetEl) {
+                if (!targetEl) return;
+                e.preventDefault();
+                const startX = e.clientX || (e.touches && e.touches[0].clientX) || 0;
+                const startY = e.clientY || (e.touches && e.touches[0].clientY) || 0;
+                const origTx = parseFloat(targetEl.dataset.sfTx || '0');
+                const origTy = parseFloat(targetEl.dataset.sfTy || '0');
+                SF.dragging = { el: targetEl, startX, startY, origTx, origTy };
+            }
+
+            document.addEventListener('mousedown', (e) => {
+                if (!SF.active || !SF.dragMode || isStudioElement(e.target)) return;
+                selectElement(e.target);
+                startDrag(e, e.target);
+            }, true);
+
+            document.getElementById('sf-quick-drag').addEventListener('mousedown', (e) => {
+                if (SF.selected) startDrag(e, SF.selected);
+            });
+
+            document.addEventListener('mousemove', (e) => {
+                if (!SF.dragging) return;
+                const dx = e.clientX - SF.dragging.startX;
+                const dy = e.clientY - SF.dragging.startY;
+                const newTx = Math.round(SF.dragging.origTx + dx);
+                const newTy = Math.round(SF.dragging.origTy + dy);
+                SF.dragging.el.dataset.sfTx = newTx;
+                SF.dragging.el.dataset.sfTy = newTy;
+                applyTransform(SF.dragging.el);
+                document.getElementById('sf-pos-x').value = Math.max(-400, Math.min(400, newTx));
+                document.getElementById('sf-pos-x-val').textContent = newTx + 'px';
+                document.getElementById('sf-pos-y').value = Math.max(-400, Math.min(400, newTy));
+                document.getElementById('sf-pos-y-val').textContent = newTy + 'px';
+            });
+
+            document.addEventListener('mouseup', () => {
+                if (SF.dragging) {
+                    SF.dragging = null;
+                    saveState();
+                }
+            });
+
+            window.addEventListener('scroll', positionQuickBar, { passive: true });
+            window.addEventListener('resize', positionQuickBar);
+
+            // Atalhos Ctrl+Z / Ctrl+Y
+            document.addEventListener('keydown', (e) => {
+                if (!SF.active) return;
+                if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'z') {
+                    if (document.activeElement && (document.activeElement.tagName === 'INPUT' || document.activeElement.tagName === 'TEXTAREA' || document.activeElement.isContentEditable)) return;
+                    e.preventDefault();
+                    undo();
+                } else if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'y') {
+                    e.preventDefault();
+                    redo();
+                }
+            });
+
+            // =====================================================
+            // CONTROLES DO INSPETOR
+            // =====================================================
+            // Abas
+            document.querySelectorAll('.sf-tab-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const tab = btn.dataset.sfTab;
+                    document.querySelectorAll('.sf-tab-btn').forEach(b => b.classList.remove('sf-tab-active'));
+                    btn.classList.add('sf-tab-active');
+                    document.querySelectorAll('.sf-tab-panel').forEach(p => {
+                        p.style.display = p.dataset.sfPanel === tab ? 'flex' : 'none';
+                    });
+                });
+            });
+
+            // Texto
+            document.getElementById('sf-inline-edit-btn').addEventListener('click', enableInlineTextEdit);
+            document.getElementById('sf-text-content').addEventListener('input', (e) => {
+                if (!SF.selected) return;
+                SF.selected.innerText = e.target.value;
+            });
+            document.getElementById('sf-text-content').addEventListener('change', saveState);
+
+            document.getElementById('sf-text-color').addEventListener('input', (e) => {
+                if (!SF.selected) return;
+                SF.selected.style.color = e.target.value;
+                document.getElementById('sf-text-color-hex').textContent = e.target.value.toUpperCase();
+            });
+            document.getElementById('sf-text-color').addEventListener('change', saveState);
+
+            document.getElementById('sf-font-size').addEventListener('input', (e) => {
+                if (!SF.selected) return;
+                SF.selected.style.fontSize = e.target.value + 'px';
+                document.getElementById('sf-font-size-val').textContent = e.target.value + 'px';
+            });
+            document.getElementById('sf-font-size').addEventListener('change', saveState);
+
+            document.getElementById('sf-font-weight').addEventListener('change', (e) => {
+                if (!SF.selected) return;
+                SF.selected.style.fontWeight = e.target.value;
+                saveState();
+            });
+            document.getElementById('sf-font-family').addEventListener('change', (e) => {
+                if (!SF.selected) return;
+                SF.selected.style.fontFamily = e.target.value;
+                saveState();
+            });
+            document.getElementById('sf-text-align').addEventListener('change', (e) => {
+                if (!SF.selected) return;
+                SF.selected.style.textAlign = e.target.value;
+                saveState();
+            });
+
+            document.getElementById('sf-toggle-italic').addEventListener('click', () => {
+                if (!SF.selected) return;
+                SF.selected.style.fontStyle = SF.selected.style.fontStyle === 'italic' ? 'normal' : 'italic';
+                saveState();
+            });
+            document.getElementById('sf-toggle-upper').addEventListener('click', () => {
+                if (!SF.selected) return;
+                SF.selected.style.textTransform = SF.selected.style.textTransform === 'uppercase' ? 'none' : 'uppercase';
+                saveState();
+            });
+            document.getElementById('sf-toggle-underline').addEventListener('click', () => {
+                if (!SF.selected) return;
+                SF.selected.style.textDecoration = SF.selected.style.textDecoration === 'underline' ? 'none' : 'underline';
+                saveState();
+            });
+
+            // Paleta rápida de cores
+            document.querySelectorAll('.sf-swatch').forEach(sw => {
+                sw.addEventListener('click', () => {
+                    if (!SF.selected) return;
+                    const prop = sw.dataset.colorTarget;
+                    const color = sw.dataset.color;
+                    SF.selected.style[prop] = color;
+                    if (prop === 'color') {
+                        document.getElementById('sf-text-color').value = color;
+                        document.getElementById('sf-text-color-hex').textContent = color;
+                    } else {
+                        document.getElementById('sf-bg-color').value = color;
+                    }
+                    saveState();
+                });
+            });
+
+            // Caixa
+            document.getElementById('sf-bg-color').addEventListener('input', (e) => {
+                if (!SF.selected) return;
+                SF.selected.style.backgroundColor = e.target.value;
+            });
+            document.getElementById('sf-bg-color').addEventListener('change', saveState);
+            document.getElementById('sf-bg-transparent').addEventListener('click', () => {
+                if (!SF.selected) return;
+                SF.selected.style.backgroundColor = 'transparent';
+                saveState();
+            });
+
+            document.getElementById('sf-opacity').addEventListener('input', (e) => {
+                if (!SF.selected) return;
+                SF.selected.style.opacity = (e.target.value / 100).toString();
+                document.getElementById('sf-opacity-val').textContent = e.target.value + '%';
+            });
+            document.getElementById('sf-opacity').addEventListener('change', saveState);
+
+            document.getElementById('sf-border-width').addEventListener('input', (e) => {
+                if (!SF.selected) return;
+                const val = e.target.value;
+                SF.selected.style.borderWidth = val + 'px';
+                SF.selected.style.borderStyle = val > 0 ? 'solid' : 'none';
+                document.getElementById('sf-border-width-val').textContent = val + 'px';
+            });
+            document.getElementById('sf-border-width').addEventListener('change', saveState);
+
+            document.getElementById('sf-border-color').addEventListener('input', (e) => {
+                if (!SF.selected) return;
+                SF.selected.style.borderColor = e.target.value;
+            });
+            document.getElementById('sf-border-color').addEventListener('change', saveState);
+
+            document.getElementById('sf-radius').addEventListener('input', (e) => {
+                if (!SF.selected) return;
+                SF.selected.style.borderRadius = e.target.value + 'px';
+                document.getElementById('sf-radius-val').textContent = e.target.value + 'px';
+            });
+            document.getElementById('sf-radius').addEventListener('change', saveState);
+
+            document.getElementById('sf-padding').addEventListener('input', (e) => {
+                if (!SF.selected) return;
+                SF.selected.style.padding = e.target.value + 'px';
+                document.getElementById('sf-padding-val').textContent = e.target.value + 'px';
+            });
+            document.getElementById('sf-padding').addEventListener('change', saveState);
+
+            // Posição & Tamanho
+            document.getElementById('sf-pos-x').addEventListener('input', (e) => {
+                if (!SF.selected) return;
+                SF.selected.dataset.sfTx = e.target.value;
+                document.getElementById('sf-pos-x-val').textContent = e.target.value + 'px';
+                applyTransform(SF.selected);
+            });
+            document.getElementById('sf-pos-x').addEventListener('change', saveState);
+
+            document.getElementById('sf-pos-y').addEventListener('input', (e) => {
+                if (!SF.selected) return;
+                SF.selected.dataset.sfTy = e.target.value;
+                document.getElementById('sf-pos-y-val').textContent = e.target.value + 'px';
+                applyTransform(SF.selected);
+            });
+            document.getElementById('sf-pos-y').addEventListener('change', saveState);
+
+            document.getElementById('sf-scale').addEventListener('input', (e) => {
+                if (!SF.selected) return;
+                SF.selected.dataset.sfScale = e.target.value;
+                document.getElementById('sf-scale-val').textContent = e.target.value + '%';
+                applyTransform(SF.selected);
+            });
+            document.getElementById('sf-scale').addEventListener('change', saveState);
+
+            document.getElementById('sf-width').addEventListener('change', (e) => {
+                if (!SF.selected) return;
+                SF.selected.style.width = e.target.value;
+                saveState();
+            });
+            document.getElementById('sf-height').addEventListener('change', (e) => {
+                if (!SF.selected) return;
+                SF.selected.style.height = e.target.value;
+                saveState();
+            });
+            document.getElementById('sf-zindex').addEventListener('input', (e) => {
+                if (!SF.selected) return;
+                SF.selected.style.position = SF.selected.style.position || 'relative';
+                SF.selected.style.zIndex = e.target.value;
+                document.getElementById('sf-zindex-val').textContent = e.target.value;
+            });
+            document.getElementById('sf-zindex').addEventListener('change', saveState);
+
+            document.getElementById('sf-reset-transform').addEventListener('click', () => {
+                if (!SF.selected) return;
+                SF.selected.dataset.sfTx = '0';
+                SF.selected.dataset.sfTy = '0';
+                SF.selected.dataset.sfScale = '100';
+                SF.selected.style.transform = '';
+                syncInspectorFromElement(SF.selected);
+                positionQuickBar();
+                saveState();
+                showToast('Posição e escala resetadas');
+            });
+
+            // Foto & Link
+            document.getElementById('sf-select-nearby-img').addEventListener('click', () => {
+                if (SF.nearbyImg) {
+                    selectElement(SF.nearbyImg);
+                    showToast('Foto selecionada! Altere a URL ou faça upload.');
+                }
+            });
+
+            function updateImageSrc(newSrc) {
+                const targetImg = (SF.selected && SF.selected.tagName === 'IMG') ? SF.selected : SF.nearbyImg;
+                if (!targetImg) {
+                    showToast('Selecione uma imagem ou bloco com foto primeiro');
+                    return;
+                }
+                targetImg.setAttribute('src', newSrc);
+                saveState();
+                showToast('Foto atualizada com sucesso!');
+            }
+
+            document.getElementById('sf-img-url').addEventListener('change', (e) => {
+                if (e.target.value.trim()) updateImageSrc(e.target.value.trim());
+            });
+
+            document.getElementById('sf-img-upload').addEventListener('change', (e) => {
+                const file = e.target.files && e.target.files[0];
+                if (!file) return;
+                const reader = new FileReader();
+                reader.onload = (ev) => {
+                    document.getElementById('sf-img-url').value = 'Foto carregada localmente';
+                    updateImageSrc(ev.target.result);
+                };
+                reader.readAsDataURL(file);
+            });
+
+            document.getElementById('sf-img-fit').addEventListener('change', (e) => {
+                const targetImg = (SF.selected && SF.selected.tagName === 'IMG') ? SF.selected : SF.nearbyImg;
+                if (!targetImg) return;
+                targetImg.style.objectFit = e.target.value;
+                saveState();
+            });
+
+            document.getElementById('sf-img-pos').addEventListener('change', (e) => {
+                const targetImg = (SF.selected && SF.selected.tagName === 'IMG') ? SF.selected : SF.nearbyImg;
+                if (!targetImg) return;
+                targetImg.style.objectPosition = e.target.value;
+                saveState();
+            });
+
+            document.getElementById('sf-link-href').addEventListener('change', (e) => {
+                if (!SF.selected) return;
+                const linkEl = SF.selected.tagName === 'A' ? SF.selected : SF.selected.closest('a');
+                if (linkEl) {
+                    linkEl.setAttribute('href', e.target.value.trim());
+                    saveState();
+                    showToast('Link atualizado!');
+                } else {
+                    showToast('O elemento selecionado não é um link <a>');
+                }
+            });
+
+            // Ações de Estrutura (Pai, Duplicar, Ocultar, Excluir)
+            function selectParent() {
+                if (!SF.selected || !SF.selected.parentElement) return;
+                const p = SF.selected.parentElement;
+                if (p === document.body || p === document.documentElement) {
+                    showToast('Você já está no nível mais alto');
+                    return;
+                }
+                selectElement(p);
+            }
+
+            function duplicateSelected() {
+                if (!SF.selected || !SF.selected.parentElement) return;
+                const clone = SF.selected.cloneNode(true);
+                clone.classList.remove('sf-selected', 'sf-hover', 'sf-editing-text');
+                clone.removeAttribute('id');
+                SF.selected.parentElement.insertBefore(clone, SF.selected.nextSibling);
+                selectElement(clone);
+                saveState();
+                showToast('Elemento duplicado!');
+            }
+
+            function deleteSelected() {
+                if (!SF.selected) return;
+                const el = SF.selected;
+                clearSelection();
+                el.remove();
+                saveState();
+                showToast('Elemento removido (use Desfazer se precisar)');
+            }
+
+            function toggleHideSelected() {
+                if (!SF.selected) return;
+                SF.selected.style.display = SF.selected.style.display === 'none' ? '' : 'none';
+                clearSelection();
+                saveState();
+                showToast('Elemento ocultado (use Desfazer para restaurar)');
+            }
+
+            document.getElementById('sf-select-parent-btn').addEventListener('click', selectParent);
+            document.getElementById('sf-quick-parent').addEventListener('click', selectParent);
+            document.getElementById('sf-dup-btn').addEventListener('click', duplicateSelected);
+            document.getElementById('sf-quick-dup').addEventListener('click', duplicateSelected);
+            document.getElementById('sf-del-btn').addEventListener('click', deleteSelected);
+            document.getElementById('sf-quick-del').addEventListener('click', deleteSelected);
+            document.getElementById('sf-hide-btn').addEventListener('click', toggleHideSelected);
+
+            // Inserir Novos Elementos
+            function insertElement(type) {
+                const container = (SF.selected && !['IMG', 'INPUT', 'BR', 'HR'].includes(SF.selected.tagName))
+                    ? SF.selected
+                    : document.querySelector('main section');
+                if (!container) return;
+
+                let newEl;
+                if (type === 'heading') {
+                    newEl = document.createElement('h3');
+                    newEl.className = 'font-display font-black uppercase text-2xl sm:text-3xl text-white my-3';
+                    newEl.innerHTML = 'NOVO TÍTULO <span class="text-energy italic">DESTAQUE</span>';
+                } else if (type === 'text') {
+                    newEl = document.createElement('p');
+                    newEl.className = 'text-lavender text-base leading-relaxed my-2';
+                    newEl.textContent = 'Clique duas vezes para editar este texto livremente na tela.';
+                } else if (type === 'button') {
+                    newEl = document.createElement('a');
+                    newEl.href = '#contato';
+                    newEl.className = 'inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-energy hover:bg-gold text-obsidian font-display font-black uppercase tracking-wider text-xs btn-energy shadow-glow-yellow my-2';
+                    newEl.textContent = 'Novo Botão de Ação';
+                } else if (type === 'badge') {
+                    newEl = document.createElement('span');
+                    newEl.className = 'inline-block px-4 py-1.5 rounded-full bg-energy/15 border border-energy/40 text-energy font-display font-bold text-xs uppercase tracking-widest my-2';
+                    newEl.textContent = '★ Novo Destaque';
+                } else if (type === 'image') {
+                    newEl = document.createElement('img');
+                    newEl.src = 'https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=900&q=80';
+                    newEl.alt = 'Nova Imagem';
+                    newEl.className = 'w-full max-w-md h-64 object-cover rounded-2xl border border-white/15 my-3';
+                }
+
+                container.appendChild(newEl);
+                selectElement(newEl);
+                saveState();
+                showToast('Novo elemento inserido!');
+            }
+
+            // =====================================================
+            // CONFIGURAÇÃO GLOBAL DE WHATSAPP
+            // =====================================================
+            document.getElementById('sf-global-btn').addEventListener('click', () => {
+                els.modalTitle.textContent = 'WhatsApp Oficial da Academia';
+                els.modalContent.innerHTML = `
+                    <p style="font-size:12px;color:#C4B9D1;margin-bottom:12px;">
+                        Informe o número com código do país + DDD (apenas números, ex.: 5519999999999). Ele será salvo automaticamente na exportação.
+                    </p>
+                    <input id="sf-wa-input" class="sf-input" type="text" value="${WHATSAPP_NUMBER}" placeholder="5519999999999" style="margin-bottom:14px;">
+                    <button id="sf-wa-save" class="sf-btn sf-btn-primary" style="width:100%;justify-content:center;padding:10px;" type="button">Salvar Número</button>
+                `;
+                els.modal.classList.add('sf-open');
+                document.getElementById('sf-wa-save').addEventListener('click', () => {
+                    const clean = document.getElementById('sf-wa-input').value.replace(/\D/g, '');
+                    if (clean.length >= 10) {
+                        WHATSAPP_NUMBER = clean;
+                        els.modal.classList.remove('sf-open');
+                        showToast('WhatsApp atualizado para: ' + clean);
+                    } else {
+                        showToast('Digite um número válido com DDD');
+                    }
+                });
+            });
+
+            // =====================================================
+            // EXPORTAÇÃO (SITE FINAL LIMPO & EDITÁVEL COM STUDIO)
+            // =====================================================
+            function buildExportHtml(includeStudio) {
+                const prevSelected = SF.selected;
+                clearSelection();
+
+                const clone = document.documentElement.cloneNode(true);
+
+                // Remove classes de estado ativo do Studio no clone
+                const cloneBody = clone.querySelector('body');
+                if (cloneBody) {
+                    cloneBody.classList.remove('sf-active-mode', 'sf-drag-cursor');
+                    cloneBody.style.overflow = '';
+                }
+
+                // Garante que o header não fique deslocado
+                const cloneHeader = clone.querySelector('#main-header');
+                if (cloneHeader) cloneHeader.style.top = '';
+
+                // Reseta animações de scroll e contadores para rodarem suavemente no site exportado
+                clone.querySelectorAll('.reveal').forEach(r => r.classList.remove('active'));
+                clone.querySelectorAll('.counter').forEach(c => {
+                    c.removeAttribute('data-animated');
+                    c.textContent = '0';
+                });
+
+                // Limpa atributos de edição temporários
+                clone.querySelectorAll('[contenteditable]').forEach(el => el.removeAttribute('contenteditable'));
+                clone.querySelectorAll('.sf-selected, .sf-hover, .sf-editing-text').forEach(el => {
+                    el.classList.remove('sf-selected', 'sf-hover', 'sf-editing-text');
+                });
+
+                if (includeStudio) {
+                    // Fecha painéis do Studio para abrir limpo com o botão flutuante pronto
+                    const tb = clone.querySelector('#sf-toolbar');
+                    const insp = clone.querySelector('#sf-inspector');
+                    const qb = clone.querySelector('#sf-quick-bar');
+                    const ln = clone.querySelector('#sf-launcher');
+                    const md = clone.querySelector('#sf-modal');
+                    if (tb) tb.classList.remove('sf-open');
+                    if (insp) insp.classList.remove('sf-open');
+                    if (qb) qb.style.display = 'none';
+                    if (ln) ln.style.display = 'inline-flex';
+                    if (md) md.classList.remove('sf-open');
+                } else {
+                    // Remove absolutamente tudo do Studio Factory para o Site Final limpo
+                    clone.querySelectorAll('[data-studio-factory="true"]').forEach(node => node.remove());
+                    clone.querySelectorAll('[data-sf-tx],[data-sf-ty],[data-sf-scale]').forEach(el => {
+                        el.removeAttribute('data-sf-tx');
+                        el.removeAttribute('data-sf-ty');
+                        el.removeAttribute('data-sf-scale');
+                    });
+                }
+
+                // Atualiza o WHATSAPP_NUMBER no script principal do clone
+                clone.querySelectorAll('script:not([data-studio-factory])').forEach(sc => {
+                    if (sc.textContent && sc.textContent.includes('WHATSAPP_NUMBER')) {
+                        sc.textContent = sc.textContent.replace(
+                            /let\s+WHATSAPP_NUMBER\s*=\s*['"][^'"]*['"];/,
+                            `let WHATSAPP_NUMBER = '${WHATSAPP_NUMBER}';`
+                        );
+                    }
+                });
+
+                if (prevSelected) selectElement(prevSelected);
+
+                return '<!DOCTYPE html>\n' + clone.outerHTML;
+            }
+
+            function triggerExport(includeStudio) {
+                const html = buildExportHtml(includeStudio);
+                SF.lastExportHtml = html;
+                const filename = includeStudio
+                    ? 'body-action-studio-editavel.html'
+                    : 'body-action-site-final.html';
+
+                // Dispara download do arquivo .html
+                try {
+                    const blob = new Blob([html], { type: 'text/html;charset=utf-8' });
+                    const url = URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.download = filename;
+                    document.body.appendChild(a);
+                    a.click();
+                    a.remove();
+                    setTimeout(() => URL.revokeObjectURL(url), 2000);
+                } catch (err) {
+                    console.error('Erro no download automático:', err);
+                }
+
+                // Abre modal de confirmação + opção de copiar código (útil em previews/iframes)
+                els.modalTitle.textContent = includeStudio ? 'Exportado com Studio Factory' : 'Site Final Exportado!';
+                els.modalContent.innerHTML = `
+                    <p style="font-size:12px;color:#C4B9D1;line-height:1.5;margin-bottom:14px;">
+                        ${includeStudio
+                            ? 'O arquivo <strong style="color:#fff;">' + filename + '</strong> foi gerado com todas as suas alterações e o <strong>Studio Factory</strong> embutido para você continuar editando quando quiser.'
+                            : 'O arquivo <strong style="color:#fff;">' + filename + '</strong> foi gerado limpo, leve e pronto para publicar — sem nenhum código ou botão do Studio Factory.'}
+                    </p>
+                    <textarea id="sf-export-code-box" readonly class="sf-textarea" rows="5" style="font-family:monospace;font-size:10px;margin-bottom:12px;"></textarea>
+                    <div style="display:flex;gap:8px;">
+                        <button id="sf-copy-export-btn" class="sf-btn sf-btn-primary" style="flex:1;justify-content:center;padding:10px;" type="button">📋 Copiar HTML Completo</button>
+                    </div>
+                `;
+                const box = document.getElementById('sf-export-code-box');
+                box.value = html;
+                els.modal.classList.add('sf-open');
+
+                document.getElementById('sf-copy-export-btn').addEventListener('click', () => {
+                    box.select();
+                    document.execCommand('copy');
+                    showToast('HTML completo copiado para a área de transferência!');
+                });
+            }
+
+            // =====================================================
+            // BINDINGS DA BARRA SUPERIOR
+            // =====================================================
+            els.launcher.addEventListener('click', openStudio);
+            document.getElementById('sf-close-btn').addEventListener('click', closeStudio);
+            document.getElementById('sf-undo-btn').addEventListener('click', undo);
+            document.getElementById('sf-redo-btn').addEventListener('click', redo);
+
+            document.getElementById('sf-mode-select').addEventListener('click', () => {
+                SF.dragMode = false;
+                document.body.classList.remove('sf-drag-cursor');
+                document.getElementById('sf-mode-select').classList.add('sf-btn-active');
+                document.getElementById('sf-mode-drag').classList.remove('sf-btn-active');
+                showToast('Modo Selecionar & Editar');
+            });
+
+            document.getElementById('sf-mode-drag').addEventListener('click', () => {
+                SF.dragMode = true;
+                document.body.classList.add('sf-drag-cursor');
+                document.getElementById('sf-mode-drag').classList.add('sf-btn-active');
+                document.getElementById('sf-mode-select').classList.remove('sf-btn-active');
+                showToast('Modo Arrastar Livre: clique e arraste qualquer item');
+            });
+
+            document.getElementById('sf-toggle-inspector').addEventListener('click', () => {
+                els.inspector.classList.toggle('sf-open');
+            });
+
+            document.getElementById('sf-export-final-btn').addEventListener('click', () => triggerExport(false));
+            document.getElementById('sf-export-studio-btn').addEventListener('click', () => triggerExport(true));
+
+            document.getElementById('sf-modal-close').addEventListener('click', () => els.modal.classList.remove('sf-open'));
+            els.modal.addEventListener('click', (e) => {
+                if (e.target === els.modal) els.modal.classList.remove('sf-open');
+            });
+
+            window.StudioFactory = { insertElement, openStudio, closeStudio };
+        })();
+    </script>
+</body>
+</html>
