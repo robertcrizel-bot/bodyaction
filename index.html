@@ -2147,8 +2147,10 @@
             const img = document.getElementById('hero-slide-img');
             if (img) {
                 const isAnniversaryPoster = currentHeroSlide === 3;
-                img.classList.toggle('object-contain', isAnniversaryPoster);
-                img.classList.toggle('object-cover', !isAnniversaryPoster);
+                img.classList.remove('object-contain');
+                img.classList.toggle('object-top', isAnniversaryPoster);
+                img.classList.toggle('object-center', !isAnniversaryPoster);
+                img.classList.add('object-cover');
                 img.style.opacity = '0.55';
                 setTimeout(() => {
                     img.src = heroSlides[currentHeroSlide];
