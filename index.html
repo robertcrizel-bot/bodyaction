@@ -1216,6 +1216,8 @@
 
                 document.addEventListener('click', function (event) {
                     if (!(event.target instanceof Element)) return;
+                    // Os cards de Jump e Ritbox usam vídeo; nunca devem abrir o lightbox de fotos.
+                    if (event.target.closest('[data-no-photo-lightbox="true"]')) return;
 
                     let node = event.target;
                     let photo = null;
