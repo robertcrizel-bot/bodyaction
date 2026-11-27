@@ -508,6 +508,19 @@
             display: flex;
         }
     </style>
+
+    <style>
+        /* Ajuste exclusivo do carrossel do topo no mobile */
+        @media (max-width: 767px) {
+            #inicio #hero-bg {
+                height: min(38vh, 300px);
+                bottom: auto;
+            }
+            #inicio #hero-slide-img {
+                object-position: center 35% !important;
+            }
+        }
+    </style>
 </head>
 <body class="text-white antialiased selection:bg-energy selection:text-obsidian relative">
 
