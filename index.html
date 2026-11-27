@@ -1243,6 +1243,7 @@
                             enlargedVideo.currentTime = cardVideo.currentTime || 0;
                             enlargedVideo.play().catch(function () {});
                         });
+                        return; // Impede que o clique no vídeo continue até a busca de imagens (ex.: Musculação).
                     }
 
                     let node = event.target;
