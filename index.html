@@ -510,6 +510,10 @@
     </style>
 
     <style>
+        @media (max-width: 767px) {
+            #inicio #hero-slide-controls { display: none !important; }
+        }
+
         /* Ajuste exclusivo do carrossel do topo no mobile */
         @media (max-width: 767px) {
             #inicio #hero-bg {
@@ -671,7 +675,7 @@
                     </p>
 
                     <!-- Indicadores de Slide Interativos (Estilo Referência) -->
-                    <div class="flex items-center gap-3 reveal delay-300">
+                    <div id="hero-slide-controls" class="flex items-center gap-3 reveal delay-300">
                         <div class="flex items-center gap-2" id="hero-slide-dots">
                             <button type="button" onclick="setHeroSlide(0)" aria-label="Slide 1" class="hero-dot w-8 h-1 rounded-full bg-energy transition-all cursor-pointer"></button>
                             <button type="button" onclick="setHeroSlide(1)" aria-label="Slide 2" class="hero-dot w-5 h-1 rounded-full bg-white/25 hover:bg-white/50 transition-all cursor-pointer"></button>
