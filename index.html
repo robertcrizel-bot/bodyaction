@@ -630,17 +630,24 @@
 
                 <!-- COLUNA ESQUERDA: Conteúdo Editorial Alinhado à Esquerda -->
                 <div class="lg:col-span-7 flex flex-col items-start text-left">
-                    <!-- Selo removido somente no mobile via CSS -->
+                    <!-- Selo mantido no desktop; oculto somente no mobile -->
+                    <div class="hidden md:inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-energy/10 border border-energy/35 mb-4 reveal">
+                        <span class="w-1.5 h-1.5 rounded-full bg-energy animate-pulse"></span>
+                        <span class="text-[11px] font-display font-bold uppercase tracking-[0.18em] text-energy">
+                            Academia no Centro • 12 Anos
+                        </span>
+                    </div>
 
                     <!-- Headline Impactante em 2 Linhas -->
-                    <h1 class="font-display font-black uppercase text-4xl sm:text-5xl xl:text-[4.25rem] tracking-tight leading-[0.96] mb-4 reveal delay-100">
+                    <h1 class="font-display font-black uppercase text-3xl sm:text-5xl xl:text-[4.25rem] tracking-tight leading-[0.98] mb-3 md:mb-4 reveal delay-100">
                         <span class="block text-white">ELEVE SUA FORÇA.</span>
                         <span class="block text-energy mt-1">VIVA A ENERGIA.</span>
                     </h1>
 
                     <!-- Subtítulo Direto -->
-                    <p class="max-w-lg text-base sm:text-lg text-lavender leading-relaxed mb-5 reveal delay-200">
-                        Musculação, Jump, Ritbox, Funcional e Ritmos com acompanhamento próximo. Nunca treinou? <span class="text-white font-medium">Sua primeira aula é por nossa conta.</span>
+                    <p class="max-w-lg text-sm sm:text-lg text-lavender leading-relaxed mb-3 md:mb-5 reveal delay-200">
+                        <span class="md:hidden">Musculação e aulas coletivas com acompanhamento próximo.</span>
+                        <span class="hidden md:inline">Musculação, Jump, Ritbox, Funcional e Ritmos com acompanhamento próximo. Nunca treinou? <span class="text-white font-medium">Sua primeira aula é por nossa conta.</span></span>
                     </p>
 
                     <!-- CTAs Estilo Pill -->
@@ -652,14 +659,14 @@
                             </span>
                         </button>
 
-                        <a href="#planos" class="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-full bg-night/75 hover:bg-royal/60 border border-white/15 hover:border-energy/50 text-white font-display font-bold text-sm backdrop-blur-md transition-all">
+                        <a href="#planos" class="hidden md:inline-flex items-center gap-2.5 px-6 py-3.5 rounded-full bg-night/75 hover:bg-royal/60 border border-white/15 hover:border-energy/50 text-white font-display font-bold text-sm backdrop-blur-md transition-all">
                             <span>Ver planos</span>
                             <i data-lucide="arrow-up-right" class="w-4 h-4 text-energy"></i>
                         </a>
                     </div>
 
-                    <!-- Nota de Apoio Discreta -->
-                    <p class="text-xs text-lavender/75 max-w-md leading-relaxed mb-5 reveal delay-300">
+                    <!-- Nota de apoio mantida somente no desktop -->
+                    <p class="hidden md:block text-xs text-lavender/75 max-w-md leading-relaxed mb-5 reveal delay-300">
                         1 aula experimental por pessoa, com professor, cerca de 1h. Traga documento com foto e roupa de treino.
                     </p>
 
