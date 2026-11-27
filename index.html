@@ -1198,16 +1198,31 @@
                 const enlarged = document.getElementById('site-photo-lightbox-image');
                 if (!lightbox || !enlarged) return;
 
-                // Indica visualmente que todas as fotos do conteúdo podem ser ampliadas.
+                // A foto pode estar coberta por um gradiente ou texto do card.
+                // Por isso o clique é tratado no ancestral que contém a imagem.
                 document.querySelectorAll('main img').forEach(function (photo) {
                     photo.style.cursor = 'zoom-in';
+                    const card = photo.closest('figure') || photo.parentElement;
+                    if (card) card.style.cursor = 'zoom-in';
                 });
 
-                // Delegação no documento: também inclui fotos das seções que aparecem
-                // depois deste script, sem depender da ordem em que o HTML é carregado.
                 document.addEventListener('click', function (event) {
-                    const photo = event.target.closest('main img');
+                    if (!(event.target instanceof Element)) return;
+
+                    let node = event.target;
+                    let photo = null;
+                    while (node && node.closest('main')) {
+                        if (node.matches('img')) {
+                            photo = node;
+                            break;
+                        }
+                        photo = node.querySelector('img');
+                        if (photo) break;
+                        node = node.parentElement;
+                    }
+
                     if (!photo || photo === enlarged || photo.closest('[data-studio-factory="true"]')) return;
+                    if (event.target.closest('button, a')) return;
 
                     event.preventDefault();
                     event.stopPropagation();
