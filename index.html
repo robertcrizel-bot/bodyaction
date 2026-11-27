@@ -2148,9 +2148,7 @@
             if (img) {
                 const isAnniversaryPoster = currentHeroSlide === 3;
                 img.classList.remove('object-contain');
-                img.classList.toggle('object-top', isAnniversaryPoster);
-                img.classList.toggle('object-center', !isAnniversaryPoster);
-                img.classList.add('object-cover');
+                img.style.objectPosition = isAnniversaryPoster ? 'center top' : '';
                 img.style.opacity = '0.55';
                 setTimeout(() => {
                     img.src = heroSlides[currentHeroSlide];
