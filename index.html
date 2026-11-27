@@ -1188,35 +1188,41 @@
             </div>
         </section>
 
-        <div id="structure-lightbox" class="fixed inset-0 z-[90] hidden items-center justify-center bg-black/95 p-3 sm:p-8" role="dialog" aria-modal="true" aria-label="Foto ampliada da estrutura" onclick="if(event.target===this) closeStructurePhoto()">
-            <button type="button" onclick="closeStructurePhoto()" aria-label="Fechar foto" class="absolute top-4 right-4 z-10 w-11 h-11 rounded-full bg-white/15 text-white text-3xl leading-none hover:bg-white/25">&times;</button>
-            <img id="structure-lightbox-image" src="" alt="Foto ampliada da estrutura da Body Action" class="max-w-full max-h-[92vh] object-contain">
+        <div id="site-photo-lightbox" class="fixed inset-0 z-[90] hidden items-center justify-center bg-black/95 p-3 sm:p-8" role="dialog" aria-modal="true" aria-label="Foto ampliada" onclick="if(event.target===this) closeSitePhoto()">
+            <button type="button" onclick="closeSitePhoto()" aria-label="Fechar foto" class="absolute top-4 right-4 z-10 w-11 h-11 rounded-full bg-white/15 text-white text-3xl leading-none hover:bg-white/25">&times;</button>
+            <img id="site-photo-lightbox-image" src="" alt="Foto ampliada" class="max-w-full max-h-[92vh] object-contain">
         </div>
         <script>
             (function () {
-                const gallery = document.querySelector('#estrutura');
-                const lightbox = document.getElementById('structure-lightbox');
-                const enlarged = document.getElementById('structure-lightbox-image');
-                if (!gallery || !lightbox || !enlarged) return;
-                gallery.querySelectorAll('figure img').forEach(function (photo) {
+                const lightbox = document.getElementById('site-photo-lightbox');
+                const enlarged = document.getElementById('site-photo-lightbox-image');
+                const page = document.querySelector('main');
+                if (!lightbox || !enlarged || !page) return;
+
+                page.querySelectorAll('img').forEach(function (photo) {
+                    if (photo.closest('[data-studio-factory="true"]')) return;
                     photo.style.cursor = 'zoom-in';
-                    photo.addEventListener('click', function () {
+                    photo.addEventListener('click', function (event) {
+                        event.preventDefault();
+                        event.stopPropagation();
                         enlarged.src = photo.currentSrc || photo.src;
-                        enlarged.alt = photo.alt;
+                        enlarged.alt = photo.alt || 'Foto ampliada';
                         lightbox.classList.remove('hidden');
                         lightbox.classList.add('flex');
                         document.body.style.overflow = 'hidden';
                     });
                 });
-                window.closeStructurePhoto = function () {
+
+                window.closeSitePhoto = function () {
                     lightbox.classList.add('hidden');
                     lightbox.classList.remove('flex');
                     enlarged.src = '';
                     document.body.style.overflow = '';
                 };
+
                 document.addEventListener('keydown', function (event) {
                     if (event.key === 'Escape' && !lightbox.classList.contains('hidden')) {
-                        window.closeStructurePhoto();
+                        window.closeSitePhoto();
                     }
                 });
             })();
