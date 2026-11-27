@@ -1248,18 +1248,11 @@
                         return; // Impede que o clique no vídeo continue até a busca de imagens (ex.: Musculação).
                     }
 
-                    let node = event.target;
-                    let photo = null;
-                    while (node && node.closest('main')) {
-                        if (node.matches('img')) {
-                            photo = node;
-                            break;
-                        }
-                        photo = node.querySelector('img');
-                        if (photo) break;
-                        node = node.parentElement;
-                    }
-
+                    // Abre a foto somente quando o clique acontece diretamente sobre uma imagem.
+                    // Cliques em textos, espaços, cards, planos e botões não devem procurar imagens ancestrais/descendentes.
+                    if (event.target.closest('button, a')) return;
+                    const photo = event.target.closest('img');
+                    
                     if (!photo || photo === enlarged || photo.closest('[data-studio-factory="true"]')) return;
                     if (event.target.closest('button, a')) return;
 
