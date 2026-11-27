@@ -1248,10 +1248,11 @@
                         return; // Impede que o clique no vídeo continue até a busca de imagens (ex.: Musculação).
                     }
 
-                    // Abre a foto somente quando o clique acontece diretamente sobre uma imagem.
-                    // Cliques em textos, espaços, cards, planos e botões não devem procurar imagens ancestrais/descendentes.
+                    // Permite ampliar ao clicar na própria foto ou na camada visual sobre ela,
+                    // sem procurar imagens em seções inteiras ou em elementos distantes.
                     if (event.target.closest('button, a')) return;
-                    const photo = event.target.closest('img');
+                    const photo = event.target.closest('img') ||
+                        (event.target.closest('.group') && event.target.closest('.group').querySelector('img'));
                     
                     if (!photo || photo === enlarged || photo.closest('[data-studio-factory="true"]')) return;
                     if (event.target.closest('button, a')) return;
