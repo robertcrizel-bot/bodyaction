@@ -1199,12 +1199,14 @@
         <div id="site-photo-lightbox" class="fixed inset-0 z-[90] hidden items-center justify-center bg-black/95 p-3 sm:p-8" role="dialog" aria-modal="true" aria-label="Foto ampliada" onclick="if(event.target===this) closeSitePhoto()">
             <button type="button" onclick="closeSitePhoto()" aria-label="Fechar foto" class="absolute top-4 right-4 z-10 w-11 h-11 rounded-full bg-white/15 text-white text-3xl leading-none hover:bg-white/25">&times;</button>
             <img id="site-photo-lightbox-image" src="" alt="Foto ampliada" class="max-w-full max-h-[92vh] object-contain">
+            <video id="site-video-lightbox-player" class="hidden max-w-full max-h-[92vh] w-auto h-auto object-contain rounded-xl" controls autoplay muted loop playsinline></video>
         </div>
         <script>
             (function () {
                 const lightbox = document.getElementById('site-photo-lightbox');
                 const enlarged = document.getElementById('site-photo-lightbox-image');
-                if (!lightbox || !enlarged) return;
+                const enlargedVideo = document.getElementById('site-video-lightbox-player');
+                if (!lightbox || !enlarged || !enlargedVideo) return;
 
                 // A foto pode estar coberta por um gradiente ou texto do card.
                 // Por isso o clique é tratado no ancestral que contém a imagem.
@@ -1216,8 +1218,25 @@
 
                 document.addEventListener('click', function (event) {
                     if (!(event.target instanceof Element)) return;
-                    // Os cards de Jump e Ritbox usam vídeo; nunca devem abrir o lightbox de fotos.
-                    if (event.target.closest('[data-no-photo-lightbox="true"]')) return;
+                    // Vídeos de Jump e Ritbox abrem em tamanho ampliado, sem acionar o lightbox de fotos.
+                    const videoCard = event.target.closest('[data-no-photo-lightbox="true"]');
+                    if (videoCard) {
+                        if (event.target.closest('button, a')) return;
+                        const cardVideo = videoCard.querySelector('video');
+                        if (!cardVideo) return;
+                        event.preventDefault();
+                        event.stopPropagation();
+                        enlarged.src = '';
+                        enlarged.classList.add('hidden');
+                        enlargedVideo.src = cardVideo.currentSrc || cardVideo.src;
+                        enlargedVideo.classList.remove('hidden');
+                        enlargedVideo.currentTime = cardVideo.currentTime || 0;
+                        enlargedVideo.play().catch(function () {});
+                        lightbox.classList.remove('hidden');
+                        lightbox.classList.add('flex');
+                        document.body.style.overflow = 'hidden';
+                        return;
+                    }
 
                     let node = event.target;
                     let photo = null;
@@ -1236,8 +1255,13 @@
 
                     event.preventDefault();
                     event.stopPropagation();
+                    enlargedVideo.pause();
+                    enlargedVideo.removeAttribute('src');
+                    enlargedVideo.load();
+                    enlargedVideo.classList.add('hidden');
                     enlarged.src = photo.currentSrc || photo.src;
                     enlarged.alt = photo.alt || 'Foto ampliada';
+                    enlarged.classList.remove('hidden');
                     lightbox.classList.remove('hidden');
                     lightbox.classList.add('flex');
                     document.body.style.overflow = 'hidden';
@@ -1247,6 +1271,11 @@
                     lightbox.classList.add('hidden');
                     lightbox.classList.remove('flex');
                     enlarged.src = '';
+                    enlargedVideo.pause();
+                    enlargedVideo.removeAttribute('src');
+                    enlargedVideo.load();
+                    enlargedVideo.classList.add('hidden');
+                    enlarged.classList.remove('hidden');
                     document.body.style.overflow = '';
                 };
 
