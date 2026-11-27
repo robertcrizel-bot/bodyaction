@@ -1741,29 +1741,17 @@
                     </div>
                 </div>
 
-                <!-- Mapa Estilizado Dark Mode -->
-                <div class="lg:col-span-7 relative min-h-[380px] rounded-3xl overflow-hidden border border-white/10 glass-card flex items-center justify-center reveal delay-100">
-                    <!-- Padrão de grade cartográfica estilizada em Dark Mode -->
-                    <div class="absolute inset-0 opacity-20" style="background-image: linear-gradient(rgba(142,36,170,0.4) 1px, transparent 1px), linear-gradient(90deg, rgba(142,36,170,0.4) 1px, transparent 1px); background-size: 40px 40px;"></div>
-                    <div class="absolute inset-0 bg-gradient-to-br from-royal/35 via-obsidian/70 to-obsidian"></div>
-
-                    <!-- Pin Central Animado -->
-                    <div class="relative z-10 text-center p-6 max-w-md">
-                        <div class="relative inline-flex items-center justify-center mb-5">
-                            <span class="absolute w-24 h-24 rounded-full bg-energy/20 animate-ping"></span>
-                            <div class="w-16 h-16 rounded-2xl bg-energy text-obsidian flex items-center justify-center shadow-glow-yellow relative z-10">
-                                <i data-lucide="map-pin" class="w-8 h-8"></i>
-                            </div>
-                        </div>
-                        <h3 class="font-display font-black uppercase text-2xl text-white">Body Action Academia</h3>
-                        <p class="text-sm text-lavender mt-2 mb-6">
-                            Localização central de fácil acesso para você não perder nenhum treino.
-                        </p>
-                        <a href="https://www.google.com/maps/place/BodyAction+academia/@-21.6041277,-46.9132412,17z/data=!3m1!4b1!4m6!3m5!1s0x94b7ce0dd085f263:0xedfcca3ffc1f9206!8m2!3d-21.6041277!4d-46.9106663!16s%2Fg%2F11b6njj8rp?entry=ttu&g_ep=EgoyMDI2MTEyMy4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-white/10 hover:bg-energy hover:text-obsidian border border-white/20 hover:border-energy text-white font-display font-bold text-xs uppercase tracking-wider transition-all">
-                            <span>Abrir no Google Maps</span>
-                            <i data-lucide="external-link" class="w-4 h-4"></i>
-                        </a>
-                    </div>
+                <!-- Mapa interativo do Google Maps -->
+                <div class="lg:col-span-7 relative min-h-[380px] rounded-3xl overflow-hidden border border-white/10 glass-card reveal delay-100">
+                    <iframe
+                        title="Localização da Body Action Academia no Google Maps"
+                        src="https://www.google.com/maps?q=-21.6041277,-46.9106663&z=17&output=embed"
+                        class="absolute inset-0 w-full h-full"
+                        style="border:0; min-height:380px;"
+                        allowfullscreen
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                    ></iframe>
                 </div>
             </div>
         </section>
