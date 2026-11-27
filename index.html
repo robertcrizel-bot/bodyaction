@@ -1226,16 +1226,23 @@
                         if (!cardVideo) return;
                         event.preventDefault();
                         event.stopPropagation();
+                        const videoPath = cardVideo.getAttribute('src');
+                        if (!videoPath) return;
+                        const videoUrl = new URL(videoPath, document.baseURI).href;
                         enlarged.src = '';
                         enlarged.classList.add('hidden');
-                        enlargedVideo.src = cardVideo.currentSrc || cardVideo.src;
+                        enlargedVideo.pause();
+                        enlargedVideo.src = videoUrl;
                         enlargedVideo.classList.remove('hidden');
-                        enlargedVideo.currentTime = cardVideo.currentTime || 0;
-                        enlargedVideo.play().catch(function () {});
                         lightbox.classList.remove('hidden');
                         lightbox.classList.add('flex');
                         document.body.style.overflow = 'hidden';
-                        return;
+                        enlargedVideo.load();
+                        enlargedVideo.addEventListener('loadedmetadata', function onVideoReady() {
+                            enlargedVideo.removeEventListener('loadedmetadata', onVideoReady);
+                            enlargedVideo.currentTime = cardVideo.currentTime || 0;
+                            enlargedVideo.play().catch(function () {});
+                        });
                     }
 
                     let node = event.target;
