@@ -2146,14 +2146,23 @@
             currentHeroSlide = index % heroSlides.length;
             const img = document.getElementById('hero-slide-img');
             if (img) {
-                const isAnniversaryPoster = currentHeroSlide === 3;
-                img.classList.remove('object-contain');
-                img.style.objectPosition = isAnniversaryPoster ? 'center top' : '';
+                const targetIndex = currentHeroSlide;
+                const nextSrc = heroSlides[targetIndex];
+                const isAnniversaryPoster = targetIndex === 3;
+                const nextImage = new Image();
+
                 img.style.opacity = '0.55';
-                setTimeout(() => {
-                    img.src = heroSlides[currentHeroSlide];
+
+                const showNextSlide = () => {
+                    if (currentHeroSlide !== targetIndex) return;
+                    img.style.objectPosition = isAnniversaryPoster ? 'center top' : '';
+                    img.src = nextSrc;
                     img.style.opacity = '0.60';
-                }, 220);
+                };
+
+                nextImage.onload = showNextSlide;
+                nextImage.onerror = showNextSlide;
+                nextImage.src = nextSrc;
             }
             document.querySelectorAll('.hero-dot').forEach((dot, i) => {
                 if (i === currentHeroSlide) {
