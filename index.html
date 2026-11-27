@@ -1196,22 +1196,27 @@
             (function () {
                 const lightbox = document.getElementById('site-photo-lightbox');
                 const enlarged = document.getElementById('site-photo-lightbox-image');
-                const page = document.querySelector('main');
-                if (!lightbox || !enlarged || !page) return;
+                if (!lightbox || !enlarged) return;
 
-                page.querySelectorAll('img').forEach(function (photo) {
-                    if (photo.closest('[data-studio-factory="true"]')) return;
+                // Indica visualmente que todas as fotos do conteúdo podem ser ampliadas.
+                document.querySelectorAll('main img').forEach(function (photo) {
                     photo.style.cursor = 'zoom-in';
-                    photo.addEventListener('click', function (event) {
-                        event.preventDefault();
-                        event.stopPropagation();
-                        enlarged.src = photo.currentSrc || photo.src;
-                        enlarged.alt = photo.alt || 'Foto ampliada';
-                        lightbox.classList.remove('hidden');
-                        lightbox.classList.add('flex');
-                        document.body.style.overflow = 'hidden';
-                    });
                 });
+
+                // Delegação no documento: também inclui fotos das seções que aparecem
+                // depois deste script, sem depender da ordem em que o HTML é carregado.
+                document.addEventListener('click', function (event) {
+                    const photo = event.target.closest('main img');
+                    if (!photo || photo === enlarged || photo.closest('[data-studio-factory="true"]')) return;
+
+                    event.preventDefault();
+                    event.stopPropagation();
+                    enlarged.src = photo.currentSrc || photo.src;
+                    enlarged.alt = photo.alt || 'Foto ampliada';
+                    lightbox.classList.remove('hidden');
+                    lightbox.classList.add('flex');
+                    document.body.style.overflow = 'hidden';
+                }, true);
 
                 window.closeSitePhoto = function () {
                     lightbox.classList.add('hidden');
