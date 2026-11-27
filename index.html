@@ -608,11 +608,11 @@
                     src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=2000&q=80"
                     onerror="this.onerror=null; this.src='https://placehold.co/1920x1080/170C24/FFD600?text=Body+Action+Academia';"
                     alt="Ambiente cinematográfico de treino na Body Action Academia"
-                    class="w-full h-full object-cover object-center lg:object-right opacity-90 transition-opacity duration-500"
+                    class="w-full h-full object-cover object-center lg:object-right opacity-100 transition-opacity duration-500" style="filter: contrast(1.08) saturate(1.12);"
                 >
                 <!-- Fusão escura roxa suave da esquerda (texto) para a direita (fundo bem visível) -->
-                <div class="absolute inset-0 bg-gradient-to-r from-[#0B0710]/90 via-[#12081F]/55 lg:via-[#12081F]/35 to-transparent"></div>
-                <div class="absolute inset-0 bg-gradient-to-t from-[#0E0718]/90 via-transparent to-[#0B0710]/40"></div>
+                <div class="absolute inset-0 bg-gradient-to-r from-[#0B0710]/78 via-[#12081F]/38 lg:via-[#12081F]/22 to-transparent"></div>
+                <div class="absolute inset-0 bg-gradient-to-t from-[#0E0718]/68 via-transparent to-[#0B0710]/24"></div>
             </div>
 
             <!-- Iluminação Volumétrica Roxa & Magenta -->
@@ -1911,10 +1911,10 @@
             currentHeroSlide = index % heroSlides.length;
             const img = document.getElementById('hero-slide-img');
             if (img) {
-                img.style.opacity = '0.35';
+                img.style.opacity = '0.55';
                 setTimeout(() => {
                     img.src = heroSlides[currentHeroSlide];
-                    img.style.opacity = '0.90';
+                    img.style.opacity = '1';
                 }, 220);
             }
             document.querySelectorAll('.hero-dot').forEach((dot, i) => {
