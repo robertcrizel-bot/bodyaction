@@ -1223,6 +1223,14 @@
                 const enlargedVideo = document.getElementById('site-video-lightbox-player');
                 if (!lightbox || !enlarged || !enlargedVideo) return;
 
+                // Mantém o botão Voltar do Android dentro do site enquanto o visualizador está aberto.
+                let lightboxHistoryOpen = false;
+                function registerLightboxHistory() {
+                    if (lightboxHistoryOpen) return;
+                    history.pushState({ ...(history.state || {}), bodyActionPhotoLightbox: true }, '', location.href);
+                    lightboxHistoryOpen = true;
+                }
+
                 // A foto pode estar coberta por um gradiente ou texto do card.
                 // Por isso o clique é tratado no ancestral que contém a imagem.
                 document.querySelectorAll('main img').forEach(function (photo) {
@@ -1252,6 +1260,7 @@
                         lightbox.classList.remove('hidden');
                         lightbox.classList.add('flex');
                         document.body.style.overflow = 'hidden';
+                        registerLightboxHistory();
                         enlargedVideo.load();
                         enlargedVideo.addEventListener('loadedmetadata', function onVideoReady() {
                             enlargedVideo.removeEventListener('loadedmetadata', onVideoReady);
@@ -1282,9 +1291,10 @@
                     lightbox.classList.remove('hidden');
                     lightbox.classList.add('flex');
                     document.body.style.overflow = 'hidden';
+                    registerLightboxHistory();
                 }, true);
 
-                window.closeSitePhoto = function () {
+                window.closeSitePhoto = function (fromPopState) {
                     lightbox.classList.add('hidden');
                     lightbox.classList.remove('flex');
                     enlarged.src = '';
@@ -1294,7 +1304,21 @@
                     enlargedVideo.classList.add('hidden');
                     enlarged.classList.remove('hidden');
                     document.body.style.overflow = '';
+                    if (lightboxHistoryOpen) {
+                        lightboxHistoryOpen = false;
+                        if (!fromPopState && history.state && history.state.bodyActionPhotoLightbox) {
+                            history.back();
+                        }
+                    }
                 };
+
+                window.addEventListener('popstate', function () {
+                    if (!lightbox.classList.contains('hidden')) {
+                        window.closeSitePhoto(true);
+                    } else {
+                        lightboxHistoryOpen = false;
+                    }
+                });
 
                 document.addEventListener('keydown', function (event) {
                     if (event.key === 'Escape' && !lightbox.classList.contains('hidden')) {
